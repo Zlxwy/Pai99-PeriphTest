@@ -7,7 +7,7 @@
 在 <font color="red">*./User/main.cpp*</font> 文件的 `main()` 函数中，每个独立函数均构成一个完整的主程序单元，负责实现单一功能模块。  
 因此在 `main()` 函数中，**每次只能调用其中一个功能函数**，若启用某项功能，必须通过注释屏蔽其他所有功能函数。  
 
-这些功能函数的具体实现在 <font color="red">*./TestCode/src/*</font> 目录下的对应 `.cpp` 文件中，其函数声明统一存放在 <font color="red">*./TestCode/inc/test.hpp*</font> 头文件内，开发者可通过查阅该头文件了解各功能模块的详细定义。
+这些功能函数的具体实现在 <font color="red">*./TestCode/src/*</font> 目录下的对应 `.cpp` 文件中，其函数声明统一存放在 <font color="red">*./TestCode/inc/test.hpp*</font> 头文件内，可通过头文件获取各功能模块列表。
 
 # 如何构建这个项目？
 
