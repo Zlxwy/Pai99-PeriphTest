@@ -1,5 +1,5 @@
 CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o: \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/TestCode/src/some_function.cpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/TestCode/src/some_function.cpp \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/stdc-predef.h \
  /home/root/opencv_4_10_build/include/opencv4/opencv2/opencv.hpp \
  /home/root/opencv_4_10_build/include/opencv4/opencv2/opencv_modules.hpp \
@@ -394,4 +394,4 @@ CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o: \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/fstream.tcc \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/numeric \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/stl_numeric.h \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/TestCode/inc/test.hpp
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/TestCode/inc/test.hpp

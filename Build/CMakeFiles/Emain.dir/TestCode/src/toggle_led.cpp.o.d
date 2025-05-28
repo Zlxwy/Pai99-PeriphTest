@@ -1,5 +1,5 @@
 CMakeFiles/Emain.dir/TestCode/src/toggle_led.cpp.o: \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/TestCode/src/toggle_led.cpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/TestCode/src/toggle_led.cpp \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/stdc-predef.h \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/memory \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/stl_algobase.h \
@@ -170,8 +170,8 @@ CMakeFiles/Emain.dir/TestCode/src/toggle_led.cpp.o: \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/confname.h \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/getopt_posix.h \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/getopt_core.h \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/Lib/inc/GpioDef.hpp \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/Lib/inc/FileOption.hpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/Lib/inc/GpioDef.hpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/Lib/inc/FileOption.hpp \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/fcntl.h \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/fcntl.h \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/fcntl-linux.h \
@@ -211,7 +211,7 @@ CMakeFiles/Emain.dir/TestCode/src/toggle_led.cpp.o: \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/cstring \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/string.h \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/strings.h \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/TestCode/inc/test.hpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/TestCode/inc/test.hpp \
  /home/root/opencv_4_10_build/include/opencv4/opencv2/opencv.hpp \
  /home/root/opencv_4_10_build/include/opencv4/opencv2/opencv_modules.hpp \
  /home/root/opencv_4_10_build/include/opencv4/opencv2/core.hpp \

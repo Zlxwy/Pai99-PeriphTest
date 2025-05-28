@@ -1,5 +1,5 @@
 CMakeFiles/Emain.dir/Lib/src/PIDObject.cpp.o: \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/Lib/src/PIDObject.cpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/Lib/src/PIDObject.cpp \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/stdc-predef.h \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/iostream \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/c++config.h \
@@ -165,4 +165,4 @@ CMakeFiles/Emain.dir/Lib/src/PIDObject.cpp.o: \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/ostream.tcc \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/istream \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/istream.tcc \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/Lib/inc/PIDObject.hpp
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/Lib/inc/PIDObject.hpp

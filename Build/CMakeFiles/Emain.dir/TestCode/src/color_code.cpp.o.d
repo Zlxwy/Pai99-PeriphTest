@@ -1,5 +1,5 @@
 CMakeFiles/Emain.dir/TestCode/src/color_code.cpp.o: \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/TestCode/src/color_code.cpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/TestCode/src/color_code.cpp \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/stdc-predef.h \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/iostream \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/c++config.h \
@@ -171,8 +171,8 @@ CMakeFiles/Emain.dir/TestCode/src/color_code.cpp.o: \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/confname.h \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/getopt_posix.h \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/getopt_core.h \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/Lib/inc/StylePrint.hpp \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/TestCode/inc/test.hpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/Lib/inc/StylePrint.hpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/TestCode/inc/test.hpp \
  /home/root/opencv_4_10_build/include/opencv4/opencv2/opencv.hpp \
  /home/root/opencv_4_10_build/include/opencv4/opencv2/opencv_modules.hpp \
  /home/root/opencv_4_10_build/include/opencv4/opencv2/core.hpp \

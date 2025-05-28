@@ -1,7 +1,7 @@
 CMakeFiles/Emain.dir/User/main.cpp.o: \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/User/main.cpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/User/main.cpp \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/stdc-predef.h \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/User/main.hpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/User/main.hpp \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/iostream \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/c++config.h \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/os_defines.h \
@@ -404,4 +404,4 @@ CMakeFiles/Emain.dir/User/main.cpp.o: \
  /home/root/opencv_4_10_build/include/opencv4/opencv2/video.hpp \
  /home/root/opencv_4_10_build/include/opencv4/opencv2/video/tracking.hpp \
  /home/root/opencv_4_10_build/include/opencv4/opencv2/video/background_segm.hpp \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/TestCode/inc/test.hpp
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/TestCode/inc/test.hpp

@@ -1,8 +1,8 @@
 CMakeFiles/Emain.dir/Lib/src/PwmDef.cpp.o: \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/Lib/src/PwmDef.cpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/Lib/src/PwmDef.cpp \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/stdc-predef.h \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/Lib/inc/PwmDef.hpp \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/PeriphTest/Lib/inc/FileOption.hpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/Lib/inc/PwmDef.hpp \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/Lib/inc/FileOption.hpp \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/string \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/c++config.h \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/os_defines.h \
