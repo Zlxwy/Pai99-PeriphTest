@@ -4,9 +4,10 @@
 * [如何传输至板卡](#如何传输至板卡)
 
 # 项目结构简述
-在 <font color="red">*./User/main.cpp*</font> 的主函数 main() 中，每一条函数都是一个完整的主程序，代表一个完整的功能。
-因此，不能在 main() 中同时调用两条函数，调用其中一条，就必须注释掉其他所有函数。
-这些主程序的函数分别定义在了 <font color="red">*./TestCode/src/*</font> 目录的每一个 cpp 文件，并在 <font color="red">*./TestCode/inc/test.hpp*</font> 中声明，可在其中查看程序内容。
+在 <font color="red">*./User/main.cpp*</font> 文件的 `main()` 函数中，每个独立函数均构成一个完整的主程序单元，负责实现单一功能模块。  
+因此在 `main()` 函数中，**每次只能调用其中一个功能函数**，若启用某项功能，必须通过注释屏蔽其他所有功能函数。  
+
+这些功能函数的具体实现在 <font color="red">*./TestCode/src/*</font> 目录下的对应 `.cpp` 文件中，其函数声明统一存放在 <font color="red">*./TestCode/inc/test.hpp*</font> 头文件内，开发者可通过查阅该头文件了解各功能模块的详细定义。
 
 # 如何构建这个项目？
 
