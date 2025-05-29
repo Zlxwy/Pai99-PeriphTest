@@ -33,6 +33,8 @@ int test_ocv_ctrl_car_with_pidclass(void) {
         std::make_shared<GpioDef>(13, MODE_OUT)
     };
     /*初始化硬件状态*/
+    bool motorEn = false; // 用来控制电机是否使能
+    motorPwm->setCmd(motorEn); // 初始失能电机
     servoPwm->setDuty( angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX) ); // 初始化舵机角度居中
     motorPwm->setDuty( speedPercent2cnt(CAR_SPEED, MOTOR_CNT_MAX) ); //初始化电机转动速度（高电平占空比25%）
     for(auto &dir: motorDir) dir->setVal(CAR_DIRECTION); // 前进方向
@@ -58,8 +60,6 @@ int test_ocv_ctrl_car_with_pidclass(void) {
     cv::Mat grayFrame;
     cv::Mat binFrame;
 
-    /*其他一些经典变量定义*/
-    bool motorEn = true; // 用来控制电机是否使能
     // 关于变量xl的PID参数定义
     PidObject xlPID;
         xlPID.isPolOfMeaValCsstWithOutVal = true;
@@ -163,6 +163,8 @@ int test_ocv_ctrl_car_with_pidclass(void) {
         std::cout << "偏移：" << py << std::endl;
         std::cout << "转向：" << ((xl<-0.2) ? "向右" : ((xl>0.2)?"向左":"直走")) << std::endl;
         std::cout << "角度：" << finalAngle << " (" << angle2cnt(finalAngle, SERVO_CNT_MAX) << ")" << std::endl;
+        stylePrint(FG_RED+BOLD+UNDERLINE, "按空格键启动/停止电机\n");
+        std::cout << "启动：" << ((motorEn) ? "是" : "否") << std::endl;
 
         /******************************检测按键***********************************/        
         if ( kb->kbhit() ) {

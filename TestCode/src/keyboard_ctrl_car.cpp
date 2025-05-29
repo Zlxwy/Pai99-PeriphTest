@@ -32,7 +32,7 @@ int test_keyboard_ctrl_car(void) {
         if ( kb->kbhit() ) { // 是否有键盘输入
             int c = kb->readKey(); // 读取字符
             if (c == KEY_ESC) break; // 如果是Esc就退出程序
-            printf("The key you have pressed is: %c\n", (char)c); // 打印按下按键
+            printf("> %c\n", (char)c); // 打印按下按键
             switch(c) { // 根据按键执行相应操作
                 case KEY_SPACE: // 空格键：控制LED闪烁
                     led->setVal( !led->getVal() );
