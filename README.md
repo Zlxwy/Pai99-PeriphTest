@@ -71,7 +71,7 @@
 在执行 `./doCmake.sh` 或 `./domake.sh` 后，就已经包含传输的操作了。
 
 # 参考
-- [龙邱视频教程](https://www.bilibili.com/video/BV1bbNRegEAj)
+- [龙邱bilibili视频教程](https://www.bilibili.com/video/BV1bbNRegEAj)
 - [龙芯官方仓库](https://cnb.cool/hex/loong/Loongson-2K0300-99PAI)
 - [龙邱科技资料仓库](https://gitee.com/lq-tech/Loongson_2k300_LIB)
 - [逐飞科技资料仓库](https://gitee.com/seekfree/LS2K0300_Library)
