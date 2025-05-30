@@ -24,6 +24,6 @@ int main(void) {
     // test_ocv_ctrl_servo();
     // test_ocv_ctrl_car_directly();
     // test_ocv_ctrl_car_with_pid();
-    test_ocv_ctrl_car_with_pidclass();
-    // test_ocv_avoid_obstacles();
+    // test_ocv_ctrl_car_with_pidclass();
+    test_ocv_avoid_obstacles();
 }
