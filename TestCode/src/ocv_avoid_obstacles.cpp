@@ -119,7 +119,6 @@ int test_ocv_avoid_obstacles(void) {
 
         /************************图像缩放、灰度化、二值化******************* */
         double th = bgr2bin(frame, resizedFrame, grayFrame, binFrame, cv::Size(RESIZED_WIDTH, RESIZED_HEIGHT), GRAY2BIN_THRESH, 255); // 自定义阈值
-        // drawLeftRightBlackBorder(binFrame); // 在二值图像的四周画黑线
 
         /***********使用B站up主“村东头无敌的小瞎子”(uid:385282905)的一种滤波算法***********/
         binImgFilter(binFrame);
@@ -149,9 +148,6 @@ int test_ocv_avoid_obstacles(void) {
         /********************根据计算出来的斜率，控制硬件驱动****************/
         xlPID.measuredVal = xl; // 将xl的值赋给xlPID的测量值
         pyPID.measuredVal = py; // 将py的值赋给pyPID的测量值
-        // xlPID.pidCalculate(); // 偏斜xl的PID计算
-        // pyPID.pidCalculate(); // 偏移py的PID计算
-        // angleOffset = xlPID.outputVal + pyPID.outputVal; // 将两个PID输出相加，得到舵机的转角偏移值
         angleOffset = xlPID.pidCalculate() + pyPID.pidCalculate(); // 将两个PID输出相加，得到舵机的转角偏移值
         angleOffset = myClamp(angleOffset, -SERVO_OFFSET_ANGLE_MAX, +SERVO_OFFSET_ANGLE_MAX); // 限制舵机转角偏移值的范围
         finalAngle = SERVO_ANGLE_MID + angleOffset; // 在中值 SERVO_ANGLE_MID 的基础之上
