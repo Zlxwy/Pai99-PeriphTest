@@ -17,10 +17,10 @@ int main(void) {
     // test_read_num_from_file();
     // test_color_code();
 
-    // test_ocv_cam_disp_with_char();
-
     // test_keyboard_ctrl_servo();
     // test_keyboard_ctrl_car();
+
+    // test_ocv_cam_disp_with_char();
     // test_ocv_ctrl_servo();
     // test_ocv_ctrl_car_directly();
     // test_ocv_ctrl_car_with_pid();
