@@ -94,6 +94,6 @@ void drawTopBottomBlackBorder(cv::Mat& binImg); // 在二值图像的上下画�
 void filterXCoord(std::vector<cv::Point>& points, std::vector<cv::Point>& filteredPoints, int windowSize); // 滤波器，平滑x坐标值
 
 /*放在主函数中的测试函数==============================================================================*/
-
+int test_pwm_output(void); // 测试PWM输出
 
 #endif // #ifndef __TESTCODE_HPP

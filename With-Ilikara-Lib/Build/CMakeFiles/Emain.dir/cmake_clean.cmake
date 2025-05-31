@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Emain.dir/Lib/src/GPIO.cpp.o"
   "CMakeFiles/Emain.dir/Lib/src/GPIO.cpp.o.d"
+  "CMakeFiles/Emain.dir/Lib/src/KeyDef.cpp.o"
+  "CMakeFiles/Emain.dir/Lib/src/KeyDef.cpp.o.d"
   "CMakeFiles/Emain.dir/Lib/src/MotorController.cpp.o"
   "CMakeFiles/Emain.dir/Lib/src/MotorController.cpp.o.d"
   "CMakeFiles/Emain.dir/Lib/src/PIDController.cpp.o"
@@ -29,6 +31,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Emain.dir/Lib/src/vl53l0x.cpp.o.d"
   "CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.o"
   "CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.o.d"
+  "CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o"
+  "CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o.d"
   "CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o"
   "CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o.d"
   "CMakeFiles/Emain.dir/User/main.cpp.o"

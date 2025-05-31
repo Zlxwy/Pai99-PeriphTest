@@ -153,6 +153,30 @@ Lib/src/GPIO.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/GPIO.cpp.s
 .PHONY : Lib/src/GPIO.cpp.s
 
+Lib/src/KeyDef.o: Lib/src/KeyDef.cpp.o
+.PHONY : Lib/src/KeyDef.o
+
+# target to build an object file
+Lib/src/KeyDef.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/KeyDef.cpp.o
+.PHONY : Lib/src/KeyDef.cpp.o
+
+Lib/src/KeyDef.i: Lib/src/KeyDef.cpp.i
+.PHONY : Lib/src/KeyDef.i
+
+# target to preprocess a source file
+Lib/src/KeyDef.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/KeyDef.cpp.i
+.PHONY : Lib/src/KeyDef.cpp.i
+
+Lib/src/KeyDef.s: Lib/src/KeyDef.cpp.s
+.PHONY : Lib/src/KeyDef.s
+
+# target to generate assembly for a file
+Lib/src/KeyDef.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/KeyDef.cpp.s
+.PHONY : Lib/src/KeyDef.cpp.s
+
 Lib/src/MotorController.o: Lib/src/MotorController.cpp.o
 .PHONY : Lib/src/MotorController.o
 
@@ -489,6 +513,30 @@ Lib/src/wonderEcho.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.s
 .PHONY : Lib/src/wonderEcho.cpp.s
 
+TestCode/src/pwm_output.o: TestCode/src/pwm_output.cpp.o
+.PHONY : TestCode/src/pwm_output.o
+
+# target to build an object file
+TestCode/src/pwm_output.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o
+.PHONY : TestCode/src/pwm_output.cpp.o
+
+TestCode/src/pwm_output.i: TestCode/src/pwm_output.cpp.i
+.PHONY : TestCode/src/pwm_output.i
+
+# target to preprocess a source file
+TestCode/src/pwm_output.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.i
+.PHONY : TestCode/src/pwm_output.cpp.i
+
+TestCode/src/pwm_output.s: TestCode/src/pwm_output.cpp.s
+.PHONY : TestCode/src/pwm_output.s
+
+# target to generate assembly for a file
+TestCode/src/pwm_output.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.s
+.PHONY : TestCode/src/pwm_output.cpp.s
+
 TestCode/src/some_function.o: TestCode/src/some_function.cpp.o
 .PHONY : TestCode/src/some_function.o
 
@@ -549,6 +597,9 @@ help:
 	@echo "... Lib/src/GPIO.o"
 	@echo "... Lib/src/GPIO.i"
 	@echo "... Lib/src/GPIO.s"
+	@echo "... Lib/src/KeyDef.o"
+	@echo "... Lib/src/KeyDef.i"
+	@echo "... Lib/src/KeyDef.s"
 	@echo "... Lib/src/MotorController.o"
 	@echo "... Lib/src/MotorController.i"
 	@echo "... Lib/src/MotorController.s"
@@ -591,6 +642,9 @@ help:
 	@echo "... Lib/src/wonderEcho.o"
 	@echo "... Lib/src/wonderEcho.i"
 	@echo "... Lib/src/wonderEcho.s"
+	@echo "... TestCode/src/pwm_output.o"
+	@echo "... TestCode/src/pwm_output.i"
+	@echo "... TestCode/src/pwm_output.s"
 	@echo "... TestCode/src/some_function.o"
 	@echo "... TestCode/src/some_function.i"
 	@echo "... TestCode/src/some_function.s"
