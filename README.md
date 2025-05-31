@@ -78,6 +78,7 @@
   - [龙芯官方仓库](https://cnb.cool/hex/loong/Loongson-2K0300-99PAI)
   - [龙邱科技资料仓库](https://gitee.com/lq-tech/Loongson_2k300_LIB)
   - [逐飞科技资料仓库](https://gitee.com/seekfree/LS2K0300_Library)
+  - [ilikara仓库](https://github.com/AirFortressIlikara/ls2k0300_peripheral_library)
 
 # 后述
 仓库在2025年机器人与人工智能比赛期间创建，智能驾驶赛道用的一块龙芯2K0300板卡。这个仓库用于记录学习测试、实际验证的代码，参考过龙邱科技、ilikara、逐飞科技。

@@ -21,7 +21,7 @@
 #include "test.hpp"
 
 #define CAR_DIRECTION   1  // 车子方向为前进
-#define CAR_SPEED       23 // 车子速度（百分比）
+#define CAR_SPEED       20 // 车子速度（百分比）
 
 int test_ocv_ctrl_car_with_pidclass(void) {
     /*实例化硬件对象*/
@@ -82,7 +82,7 @@ int test_ocv_ctrl_car_with_pidclass(void) {
         pyPID.isPolOfMeaValCsstWithOutVal = false;
         pyPID.kP = 0.03;
         pyPID.kI = 0.0;
-        pyPID.kD = 1.9;
+        pyPID.kD = 0.9;
         pyPID.isFirstOrderFilterEnabled = false;
         pyPID.filterParam = 0.0;
         pyPID.targetVal = (0+RESIZED_WIDTH-1)/2.0;
@@ -171,8 +171,8 @@ int test_ocv_ctrl_car_with_pidclass(void) {
             int keyGet = kb->readKey();
             if( keyGet == KEY_ESC ) break;
             else if (keyGet == KEY_SPACE) {
-                motorPwm->setCmd(motorEn); //翻转电机使能状态
                 motorEn = !motorEn;
+                motorPwm->setCmd(motorEn); //翻转电机使能状态
             }
         }
     }
