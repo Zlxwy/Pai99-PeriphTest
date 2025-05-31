@@ -11,7 +11,7 @@ INC_DIRS := \
 ./Lib/inc/ \
 ./TestCode/inc/ \
 ./User/ \
-/home/root/opencv_4_10_build/include/opencv4/
+/home/root/opencv/include/opencv4/
 # end list
 
 # 在这里列举所有包含cpp源文件的目录，必须以斜杆'/'结尾（就不用输入main函数文件的路径了）
@@ -22,7 +22,7 @@ SRC_DIRS := \
 
 # 在这里列举库文件的搜索路径（不区分动态库和静态库）
 LIB_DIRS := \
-/home/root/opencv_4_10_build/lib/
+/home/root/opencv/lib/
 # end list
 
 # 在这里列举要链接的库文件（不区分动态库和静态库）
@@ -48,7 +48,7 @@ SOURCE := $(foreach dir, $(SRC_DIRS), $(wildcard $(dir)*.cpp))
 
 # 函数$(patsubst)会把" -L%"中的%替换成$(LIB_DIRS)的条目
 # 函数$(patsubst)会对$(LIB_DIRS)中的每个条目单独执行此操作。
-# 结果: LIBRARY := -L/opt/opencv_4_10_build/lib/
+# 结果: LIBRARY := -L/opt/opencv/lib/
 LIBRARY := $(patsubst %, -L%, $(LIB_DIRS))
 
 # 函数$(patsubst)会把" -l%"中的%替换成$(LIB_LINKS)的条目

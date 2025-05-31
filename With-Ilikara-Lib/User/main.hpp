@@ -20,5 +20,5 @@
 #include <chrono>       // 提供时间相关的功能，如计时器。
 #include <atomic>       // 提供原子操作，用于多线程编程中的数据安全访问。
 #include <opencv2/opencv.hpp>
-using namespace std;
+
 #endif /* #define __MAIN_HPP */

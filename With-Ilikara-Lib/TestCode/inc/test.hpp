@@ -94,28 +94,6 @@ void drawTopBottomBlackBorder(cv::Mat& binImg); // 在二值图像的上下画�
 void filterXCoord(std::vector<cv::Point>& points, std::vector<cv::Point>& filteredPoints, int windowSize); // 滤波器，平滑x坐标值
 
 /*放在主函数中的测试函数==============================================================================*/
-int test_gpio_out_in(void);
-int test_close_beep(void);
-int test_toggle_led(void);
-int test_pwm_output(void);
-int test_uart_txrx(void);
-int test_signal_sim_timer_interrupt(void);
-int test_thread_sim_timer_interrupt(void);
-int test_thread_timer(void);
-int test_multi_threads(void);
-int test_keyboard_read(void);
-int test_ensure_pwm_freq(void);
-int test_keyboard_ctrl_car(void);
-int test_keyboard_ctrl_servo(void);
-int test_imitate_terminal(void);
-int test_read_num_from_file(void);
-int test_color_code(void);
-int test_ocv_cam_disp_with_char(void);
-int test_ocv_ctrl_servo(void);
-int test_ocv_ctrl_car_directly(void); // 直接将误差映射至控制量进行控制
-int test_ocv_ctrl_car_with_pid(void); // 将误差经过PID计算得出控制量进行控制
-int test_ocv_ctrl_car_with_pidclass(void); // 使用PID对象类进行PID计算
-int test_ocv_avoid_obstacles(void); // 避障
-int set_88_88_input_mode(void);
+
 
 #endif // #ifndef __TESTCODE_HPP

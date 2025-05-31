@@ -16,14 +16,14 @@ aux_source_directory(${PROJECT_SOURCE_DIR}/User/ SRC)
 include_directories(${PROJECT_SOURCE_DIR}/Lib/inc/)
 include_directories(${PROJECT_SOURCE_DIR}/TestCode/inc/)
 include_directories(${PROJECT_SOURCE_DIR}/User/)
-include_directories(/home/root/opencv_4_10_build/include/opencv4/)
+include_directories(/home/root/opencv/include/opencv4/)
 
 # 找到opencv所需的库文件并保存到变量中
-find_library(OPENCV_CORE      opencv_core      /home/root/opencv_4_10_build/lib/)
-find_library(OPENCV_IMGPROC   opencv_imgproc   /home/root/opencv_4_10_build/lib/)
-find_library(OPENCV_HIGHGUI   opencv_highgui   /home/root/opencv_4_10_build/lib/)
-find_library(OPENCV_VIDEOIO   opencv_videoio   /home/root/opencv_4_10_build/lib/)
-find_library(OPENCV_IMGCODECS opencv_imgcodecs /home/root/opencv_4_10_build/lib/)
+find_library(OPENCV_CORE      opencv_core      /home/root/opencv/lib/)
+find_library(OPENCV_IMGPROC   opencv_imgproc   /home/root/opencv/lib/)
+find_library(OPENCV_HIGHGUI   opencv_highgui   /home/root/opencv/lib/)
+find_library(OPENCV_VIDEOIO   opencv_videoio   /home/root/opencv/lib/)
+find_library(OPENCV_IMGCODECS opencv_imgcodecs /home/root/opencv/lib/)
 
 # 若需使用静态库，可带上下面两行程序，具体可参考龙邱B站视频教程
 # link_directories(${PROJECT_SOURCE_DIR}/a)
