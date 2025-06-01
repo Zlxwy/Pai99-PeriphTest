@@ -11,18 +11,16 @@
 int test_keyboard_ctrl_servo(void) {
     /*初始化舵机PWM: pwmchip1,pwm0(GPIO65)*/
     PwmController servoPwm = PwmController(1,0); // 舵机PWM控制器
+    servoPwm.setPolarity(false); // 设置极性为反向
     servoPwm.setPeriod(SERVO_CNT_MAX); // 设置PWM周期为SERVO_CNT_MAX，对应频率为50Hz
     servoPwm.setDutyCycle(angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX)); // 设置初始占空比为中间位置
-    servoPwm.setPolarity(false); // 设置极性为反向
     bool is_servo_enabled = false; // 舵机使能状态
     (is_servo_enabled) ? servoPwm.enable() : servoPwm.disable(); // 启动或禁用舵机PWM输出
 
     /*键盘*/
     KeyDef keyboard;
     
-    stylePrint(BOLD+UNDERLINE+FG_YELLOW, "按逗号键，舵机控制前轮左转；按句号键，舵机控制前轮右转\n");
     double servo_angle = SERVO_ANGLE_MID;
-    
     while (true) {
         if ( keyboard.kbhit() ) {
             int getKey = keyboard.readKey();

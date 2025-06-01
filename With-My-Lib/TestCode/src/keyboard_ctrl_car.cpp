@@ -38,16 +38,16 @@ int test_keyboard_ctrl_car(void) {
                     led->setVal( !led->getVal() );
                     break;
                 case KEY_W: case KEY_w: // W: 前进
-                    servoPwm->setDuty( angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX) ); //控制舵机居中（15度）
+                    servoPwm->setDuty( angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX) ); //控制舵机居中
                     for(auto &dir: motorDir) dir->setVal(1); //设置电机转动方向
                     motorPwm->setCmd(true); //启动电机PWM输出
-                    motorPwm->setDuty( speedPercent2cnt(20, MOTOR_CNT_MAX) ); //设置电机转动速度（高电平占空比25%）
+                    motorPwm->setDuty( speedPercent2cnt(20, MOTOR_CNT_MAX) ); //设置电机转动速度
                     break;
                 case KEY_S: case KEY_s: // S: 后退
                     servoPwm->setDuty( angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX) ); //控制舵机居中
                     for(auto &dir: motorDir) dir->setVal(0); //设置电机转动方向
                     motorPwm->setCmd(true); //启动电机PWM输出
-                    motorPwm->setDuty( speedPercent2cnt(20, MOTOR_CNT_MAX) ); //设置电机转动速度（高电平占空比15%）
+                    motorPwm->setDuty( speedPercent2cnt(20, MOTOR_CNT_MAX) ); //设置电机转动速度
                     break;
                 case KEY_A: case KEY_a: // A: 左转
                     servoPwm->setDuty( angle2cnt(SERVO_ANGLE_MAX, SERVO_CNT_MAX) ); //控制舵机打左
