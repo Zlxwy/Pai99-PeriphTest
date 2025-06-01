@@ -513,6 +513,30 @@ Lib/src/wonderEcho.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.s
 .PHONY : Lib/src/wonderEcho.cpp.s
 
+TestCode/src/motor_drive.o: TestCode/src/motor_drive.cpp.o
+.PHONY : TestCode/src/motor_drive.o
+
+# target to build an object file
+TestCode/src/motor_drive.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.o
+.PHONY : TestCode/src/motor_drive.cpp.o
+
+TestCode/src/motor_drive.i: TestCode/src/motor_drive.cpp.i
+.PHONY : TestCode/src/motor_drive.i
+
+# target to preprocess a source file
+TestCode/src/motor_drive.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.i
+.PHONY : TestCode/src/motor_drive.cpp.i
+
+TestCode/src/motor_drive.s: TestCode/src/motor_drive.cpp.s
+.PHONY : TestCode/src/motor_drive.s
+
+# target to generate assembly for a file
+TestCode/src/motor_drive.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.s
+.PHONY : TestCode/src/motor_drive.cpp.s
+
 TestCode/src/pwm_output.o: TestCode/src/pwm_output.cpp.o
 .PHONY : TestCode/src/pwm_output.o
 
@@ -642,6 +666,9 @@ help:
 	@echo "... Lib/src/wonderEcho.o"
 	@echo "... Lib/src/wonderEcho.i"
 	@echo "... Lib/src/wonderEcho.s"
+	@echo "... TestCode/src/motor_drive.o"
+	@echo "... TestCode/src/motor_drive.i"
+	@echo "... TestCode/src/motor_drive.s"
 	@echo "... TestCode/src/pwm_output.o"
 	@echo "... TestCode/src/pwm_output.i"
 	@echo "... TestCode/src/pwm_output.s"

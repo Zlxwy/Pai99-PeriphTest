@@ -35,15 +35,6 @@ int test_pwm_output(void) {
             motorR.updateduty(i),
             usleep(ms2us(10));
         }
-        // motorL.updateduty(10);
-        // motorR.updateduty(10);
-        // usleep(ms2us(200));
-        // motorL.updateduty(50);
-        // motorR.updateduty(50);
-        // usleep(ms2us(200));
-        // motorL.updateduty(90);
-        // motorR.updateduty(90);
-        // usleep(ms2us(200));
     }
     return 0;
 }

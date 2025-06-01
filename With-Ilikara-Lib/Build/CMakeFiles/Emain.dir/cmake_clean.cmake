@@ -31,6 +31,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Emain.dir/Lib/src/vl53l0x.cpp.o.d"
   "CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.o"
   "CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.o.d"
+  "CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.o"
+  "CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.o.d"
   "CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o"
   "CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o.d"
   "CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o"

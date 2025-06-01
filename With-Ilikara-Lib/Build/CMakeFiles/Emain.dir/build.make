@@ -293,10 +293,24 @@ CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.s"
 	/opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/bin/loongarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Lib/src/wonderEcho.cpp -o CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.s
 
+CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.o: CMakeFiles/Emain.dir/flags.make
+CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.o: ../TestCode/src/motor_drive.cpp
+CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.o: CMakeFiles/Emain.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.o"
+	/opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/bin/loongarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.o -MF CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.o.d -o CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.o -c /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/motor_drive.cpp
+
+CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.i"
+	/opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/bin/loongarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/motor_drive.cpp > CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.i
+
+CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.s"
+	/opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/bin/loongarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/motor_drive.cpp -o CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.s
+
 CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o: CMakeFiles/Emain.dir/flags.make
 CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o: ../TestCode/src/pwm_output.cpp
 CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o: CMakeFiles/Emain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o"
 	/opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/bin/loongarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o -MF CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o.d -o CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o -c /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/pwm_output.cpp
 
 CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.i: cmake_force
@@ -310,7 +324,7 @@ CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.s: cmake_force
 CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o: CMakeFiles/Emain.dir/flags.make
 CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o: ../TestCode/src/some_function.cpp
 CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o: CMakeFiles/Emain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o"
 	/opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/bin/loongarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o -MF CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o.d -o CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o -c /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/some_function.cpp
 
 CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.i: cmake_force
@@ -324,7 +338,7 @@ CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.s: cmake_force
 CMakeFiles/Emain.dir/User/main.cpp.o: CMakeFiles/Emain.dir/flags.make
 CMakeFiles/Emain.dir/User/main.cpp.o: ../User/main.cpp
 CMakeFiles/Emain.dir/User/main.cpp.o: CMakeFiles/Emain.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/Emain.dir/User/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/Emain.dir/User/main.cpp.o"
 	/opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/bin/loongarch64-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Emain.dir/User/main.cpp.o -MF CMakeFiles/Emain.dir/User/main.cpp.o.d -o CMakeFiles/Emain.dir/User/main.cpp.o -c /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/User/main.cpp
 
 CMakeFiles/Emain.dir/User/main.cpp.i: cmake_force
@@ -353,6 +367,7 @@ Emain_OBJECTS = \
 "CMakeFiles/Emain.dir/Lib/src/video.cpp.o" \
 "CMakeFiles/Emain.dir/Lib/src/vl53l0x.cpp.o" \
 "CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.o" \
+"CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.o" \
 "CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o" \
 "CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o" \
 "CMakeFiles/Emain.dir/User/main.cpp.o"
@@ -376,6 +391,7 @@ Emain: CMakeFiles/Emain.dir/Lib/src/serial.cpp.o
 Emain: CMakeFiles/Emain.dir/Lib/src/video.cpp.o
 Emain: CMakeFiles/Emain.dir/Lib/src/vl53l0x.cpp.o
 Emain: CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.o
+Emain: CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.o
 Emain: CMakeFiles/Emain.dir/TestCode/src/pwm_output.cpp.o
 Emain: CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o
 Emain: CMakeFiles/Emain.dir/User/main.cpp.o
@@ -386,7 +402,7 @@ Emain: /home/root/opencv/lib/libopencv_highgui.so
 Emain: /home/root/opencv/lib/libopencv_videoio.so
 Emain: /home/root/opencv/lib/libopencv_imgcodecs.so
 Emain: CMakeFiles/Emain.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable Emain"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Linking CXX executable Emain"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Emain.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

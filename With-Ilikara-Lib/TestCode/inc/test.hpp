@@ -37,7 +37,7 @@ typedef int64_t     int64;  // 64位有符号整数
 
 /*运动器件的一些定义*/
 #define PWM_CLK_FREQ    ((int)1000000000)
-#define MOTOR_PWM_FREQ  ((int)10000)
+#define MOTOR_PWM_FREQ  ((int)20000)
 #define MOTOR_CNT_MAX   ((int)(PWM_CLK_FREQ/MOTOR_PWM_FREQ))
 #define SERVO_PWM_FREQ  ((int)50)
 #define SERVO_CNT_MAX   ((int)(PWM_CLK_FREQ/SERVO_PWM_FREQ))
@@ -95,5 +95,6 @@ void filterXCoord(std::vector<cv::Point>& points, std::vector<cv::Point>& filter
 
 /*放在主函数中的测试函数==============================================================================*/
 int test_pwm_output(void); // 测试PWM输出
+int test_motor_drive(void); // 测试电机驱动
 
 #endif // #ifndef __TESTCODE_HPP
