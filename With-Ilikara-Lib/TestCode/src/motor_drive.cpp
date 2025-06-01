@@ -6,7 +6,7 @@
 #include "PwmController.h"
 #include "encoder.h"
 
-/*测试电机整体功能*/
+/*电机整体功能初始化代码*/
 int test_motor_drive(void) {
     /*初始化电机PWM: [0]pwmchip8,pwm2(GPIO89) 和 [1]pwmchip8,pwm1(GPIO88)*/
     PwmController motorPWM[2] = { PwmController(8,2), PwmController(8,1) }; // 电机PWM控制器
@@ -14,7 +14,7 @@ int test_motor_drive(void) {
         mp.setPolarity(false); // 设置极性为反向
         mp.setPeriod(MOTOR_CNT_MAX); // 设置PWM周期为MOTOR_CNT_MAX，对应频率为20kHz
         mp.setDutyCycle( speedPercent2cnt(0, MOTOR_CNT_MAX) ); // 设置初始占空比为0
-        mp.enable();
+        mp.enable(); // 启动电机PWM输出
     } // 设置PWM周期为MOTOR_CNT_MAX，对应频率为20kHz
 
     /*初始化电机方向引脚: [0]GPIO12 和 [1]GPIO13*/

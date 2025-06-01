@@ -225,6 +225,30 @@ Lib/src/PIDController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/PIDController.cpp.s
 .PHONY : Lib/src/PIDController.cpp.s
 
+Lib/src/PIDObject.o: Lib/src/PIDObject.cpp.o
+.PHONY : Lib/src/PIDObject.o
+
+# target to build an object file
+Lib/src/PIDObject.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/PIDObject.cpp.o
+.PHONY : Lib/src/PIDObject.cpp.o
+
+Lib/src/PIDObject.i: Lib/src/PIDObject.cpp.i
+.PHONY : Lib/src/PIDObject.i
+
+# target to preprocess a source file
+Lib/src/PIDObject.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/PIDObject.cpp.i
+.PHONY : Lib/src/PIDObject.cpp.i
+
+Lib/src/PIDObject.s: Lib/src/PIDObject.cpp.s
+.PHONY : Lib/src/PIDObject.s
+
+# target to generate assembly for a file
+Lib/src/PIDObject.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/PIDObject.cpp.s
+.PHONY : Lib/src/PIDObject.cpp.s
+
 Lib/src/PwmController.o: Lib/src/PwmController.cpp.o
 .PHONY : Lib/src/PwmController.o
 
@@ -633,6 +657,30 @@ TestCode/src/motor_drive.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.s
 .PHONY : TestCode/src/motor_drive.cpp.s
 
+TestCode/src/ocv_ctrl_car_with_pid.o: TestCode/src/ocv_ctrl_car_with_pid.cpp.o
+.PHONY : TestCode/src/ocv_ctrl_car_with_pid.o
+
+# target to build an object file
+TestCode/src/ocv_ctrl_car_with_pid.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/ocv_ctrl_car_with_pid.cpp.o
+.PHONY : TestCode/src/ocv_ctrl_car_with_pid.cpp.o
+
+TestCode/src/ocv_ctrl_car_with_pid.i: TestCode/src/ocv_ctrl_car_with_pid.cpp.i
+.PHONY : TestCode/src/ocv_ctrl_car_with_pid.i
+
+# target to preprocess a source file
+TestCode/src/ocv_ctrl_car_with_pid.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/ocv_ctrl_car_with_pid.cpp.i
+.PHONY : TestCode/src/ocv_ctrl_car_with_pid.cpp.i
+
+TestCode/src/ocv_ctrl_car_with_pid.s: TestCode/src/ocv_ctrl_car_with_pid.cpp.s
+.PHONY : TestCode/src/ocv_ctrl_car_with_pid.s
+
+# target to generate assembly for a file
+TestCode/src/ocv_ctrl_car_with_pid.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/ocv_ctrl_car_with_pid.cpp.s
+.PHONY : TestCode/src/ocv_ctrl_car_with_pid.cpp.s
+
 TestCode/src/pwm_output.o: TestCode/src/pwm_output.cpp.o
 .PHONY : TestCode/src/pwm_output.o
 
@@ -726,6 +774,9 @@ help:
 	@echo "... Lib/src/PIDController.o"
 	@echo "... Lib/src/PIDController.i"
 	@echo "... Lib/src/PIDController.s"
+	@echo "... Lib/src/PIDObject.o"
+	@echo "... Lib/src/PIDObject.i"
+	@echo "... Lib/src/PIDObject.s"
 	@echo "... Lib/src/PwmController.o"
 	@echo "... Lib/src/PwmController.i"
 	@echo "... Lib/src/PwmController.s"
@@ -777,6 +828,9 @@ help:
 	@echo "... TestCode/src/motor_drive.o"
 	@echo "... TestCode/src/motor_drive.i"
 	@echo "... TestCode/src/motor_drive.s"
+	@echo "... TestCode/src/ocv_ctrl_car_with_pid.o"
+	@echo "... TestCode/src/ocv_ctrl_car_with_pid.i"
+	@echo "... TestCode/src/ocv_ctrl_car_with_pid.s"
 	@echo "... TestCode/src/pwm_output.o"
 	@echo "... TestCode/src/pwm_output.i"
 	@echo "... TestCode/src/pwm_output.s"

@@ -15,7 +15,7 @@ int test_keyboard_ctrl_car(void) {
         mp.setPolarity(false); // 设置极性为反向
         mp.setPeriod(MOTOR_CNT_MAX); // 设置PWM周期为MOTOR_CNT_MAX，对应频率为20kHz
         mp.setDutyCycle( speedPercent2cnt(0, MOTOR_CNT_MAX) ); // 设置初始占空比为0
-        mp.enable();
+        mp.enable(); // 启动电机PWM输出
     } // 设置PWM周期为MOTOR_CNT_MAX，对应频率为20kHz
 
     /*初始化电机方向引脚: [0]GPIO12 和 [1]GPIO13*/
