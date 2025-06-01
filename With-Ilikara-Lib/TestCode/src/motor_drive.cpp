@@ -46,7 +46,31 @@ int test_motor_drive(void) {
     std::cout << "按ESC键退出程序" << std::endl;
 
     while (true) {
-        usleep(ms2us(1000)); // 暂停2秒
+        // 在前面的初始化代码，已经调用过enable()方法启动了PWM输出，
+        for (auto &mp: motorPWM) mp.setDutyCycle(speedPercent2cnt(25, MOTOR_CNT_MAX)); // 设置电机速度
+        for (auto &md: motorDIR) md.setValue(true); //设置电机正转向
+        usleep(sec2us(3)); // 延时3秒
+        for (auto &md: motorDIR) md.setValue(false); //设置电机反转向
+        usleep(sec2us(3)); // 延时3秒
+        for (auto &mp: motorPWM) mp.enable(); // 启动电机PWM输出
+        for (auto &mp: motorPWM) mp.disable(); // 停止电机PWM输出
+
+        // 在前面的初始化代码，已经调用过enable()方法启动了舵机PWM输出，
+        servoPWM.setDutyCycle(angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX)); // 控制舵机居中
+        usleep(sec2us(1)); // 暂停1秒
+        servoPWM.setDutyCycle(angle2cnt(SERVO_ANGLE_MAX, SERVO_CNT_MAX)); // 控制舵机到最大角度
+        usleep(sec2us(1)); // 暂停1秒
+        servoPWM.setDutyCycle(angle2cnt(SERVO_ANGLE_MIN, SERVO_CNT_MAX)); // 控制舵机到最小角度
+        usleep(sec2us(1)); // 暂停1秒
+        servoPWM.enable(); // 启动舵机PWM输出
+        servoPWM.disable(); // 停止舵机PWM输出
+
+        if (keyboard.kbhit()) {
+            int getKey = keyboard.readKey();
+            if (getKey == KEY_ESC) break; // 按ESC键退出
+        }
+
+        usleep(ms2us(10)); // 暂停10ms
     }
     return 0;
 }

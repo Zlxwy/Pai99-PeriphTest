@@ -45,16 +45,6 @@ int test_keyboard_ctrl_car(void) {
     stylePrint(FG_YELLOW+UNDERLINE, "W: 前进, S: 后退, A: 左转, D: 右转, 其他键: 停止\n");
 
     while (true) {
-        for(int i=0; i<100; i++) {
-            for (auto &mp: motorPWM) mp.setDutyCycle(speedPercent2cnt(i, MOTOR_CNT_MAX));
-            usleep(ms2us(10));
-        }
-        for(int i=99; i>0; i--) {
-            for (auto &mp: motorPWM) mp.setDutyCycle(speedPercent2cnt(i, MOTOR_CNT_MAX));
-            usleep(ms2us(10));
-        }
-        usleep(ms2us(2000)); // 暂停1秒
-
         if ( keyboard.kbhit() ) {
             int getKey = keyboard.readKey();
             if (getKey == KEY_ESC) break;
@@ -64,27 +54,27 @@ int test_keyboard_ctrl_car(void) {
                     servoPWM.setDutyCycle( angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX) ); //控制舵机居中
                     for (auto &md: motorDIR) md.setValue(true); //设置电机转动方向
                     for (auto &mp: motorPWM) {
-                        mp.setDutyCycle( speedPercent2cnt(20, MOTOR_CNT_MAX) ); //设置电机转动速度
+                        mp.setDutyCycle(speedPercent2cnt(20, MOTOR_CNT_MAX)); //设置电机转动速度
                         mp.enable(); //启动电机PWM输出
                     }
                     break;
                 case KEY_S: case KEY_s: // S: 后退
-                    servoPWM.setDutyCycle( angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX) ); //控制舵机居中
+                    servoPWM.setDutyCycle(angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX)); //控制舵机居中
                     for (auto &md: motorDIR) md.setValue(false); //设置电机转动方向
                     for (auto &mp: motorPWM) {
-                        mp.setDutyCycle( speedPercent2cnt(20, MOTOR_CNT_MAX) ); //设置电机转动速度
+                        mp.setDutyCycle(speedPercent2cnt(20, MOTOR_CNT_MAX)); //设置电机转动速度
                         mp.enable(); //启动电机PWM输出
                     }
                     break;
                 case KEY_A: case KEY_a: // A: 左转
-                    servoPWM.setDutyCycle( angle2cnt(SERVO_ANGLE_MAX, SERVO_CNT_MAX) ); //控制舵机打左
+                    servoPWM.setDutyCycle(angle2cnt(SERVO_ANGLE_MAX, SERVO_CNT_MAX)); //控制舵机打左
                     break;
                 case KEY_D: case KEY_d: // D: 右转
-                    servoPWM.setDutyCycle( angle2cnt(SERVO_ANGLE_MIN, SERVO_CNT_MAX) ); //控制舵机打右
+                    servoPWM.setDutyCycle(angle2cnt(SERVO_ANGLE_MIN, SERVO_CNT_MAX)); //控制舵机打右
                     break;
                 default: // 其他键
                     for (auto &mp: motorPWM) {
-                        mp.setDutyCycle( speedPercent2cnt(0, MOTOR_CNT_MAX) ); //设置电机转动速度
+                        mp.setDutyCycle(speedPercent2cnt(0, MOTOR_CNT_MAX)); //设置电机转动速度
                         mp.disable(); //关闭电机PWM输出
                     }
                     break;
