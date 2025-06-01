@@ -249,6 +249,30 @@ Lib/src/PwmController.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/PwmController.cpp.s
 .PHONY : Lib/src/PwmController.cpp.s
 
+Lib/src/StylePrint.o: Lib/src/StylePrint.cpp.o
+.PHONY : Lib/src/StylePrint.o
+
+# target to build an object file
+Lib/src/StylePrint.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/StylePrint.cpp.o
+.PHONY : Lib/src/StylePrint.cpp.o
+
+Lib/src/StylePrint.i: Lib/src/StylePrint.cpp.i
+.PHONY : Lib/src/StylePrint.i
+
+# target to preprocess a source file
+Lib/src/StylePrint.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/StylePrint.cpp.i
+.PHONY : Lib/src/StylePrint.cpp.i
+
+Lib/src/StylePrint.s: Lib/src/StylePrint.cpp.s
+.PHONY : Lib/src/StylePrint.s
+
+# target to generate assembly for a file
+Lib/src/StylePrint.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/StylePrint.cpp.s
+.PHONY : Lib/src/StylePrint.cpp.s
+
 Lib/src/Timer.o: Lib/src/Timer.cpp.o
 .PHONY : Lib/src/Timer.o
 
@@ -513,6 +537,78 @@ Lib/src/wonderEcho.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.s
 .PHONY : Lib/src/wonderEcho.cpp.s
 
+TestCode/src/gpio_output.o: TestCode/src/gpio_output.cpp.o
+.PHONY : TestCode/src/gpio_output.o
+
+# target to build an object file
+TestCode/src/gpio_output.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/gpio_output.cpp.o
+.PHONY : TestCode/src/gpio_output.cpp.o
+
+TestCode/src/gpio_output.i: TestCode/src/gpio_output.cpp.i
+.PHONY : TestCode/src/gpio_output.i
+
+# target to preprocess a source file
+TestCode/src/gpio_output.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/gpio_output.cpp.i
+.PHONY : TestCode/src/gpio_output.cpp.i
+
+TestCode/src/gpio_output.s: TestCode/src/gpio_output.cpp.s
+.PHONY : TestCode/src/gpio_output.s
+
+# target to generate assembly for a file
+TestCode/src/gpio_output.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/gpio_output.cpp.s
+.PHONY : TestCode/src/gpio_output.cpp.s
+
+TestCode/src/keyboard_ctrl_car.o: TestCode/src/keyboard_ctrl_car.cpp.o
+.PHONY : TestCode/src/keyboard_ctrl_car.o
+
+# target to build an object file
+TestCode/src/keyboard_ctrl_car.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/keyboard_ctrl_car.cpp.o
+.PHONY : TestCode/src/keyboard_ctrl_car.cpp.o
+
+TestCode/src/keyboard_ctrl_car.i: TestCode/src/keyboard_ctrl_car.cpp.i
+.PHONY : TestCode/src/keyboard_ctrl_car.i
+
+# target to preprocess a source file
+TestCode/src/keyboard_ctrl_car.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/keyboard_ctrl_car.cpp.i
+.PHONY : TestCode/src/keyboard_ctrl_car.cpp.i
+
+TestCode/src/keyboard_ctrl_car.s: TestCode/src/keyboard_ctrl_car.cpp.s
+.PHONY : TestCode/src/keyboard_ctrl_car.s
+
+# target to generate assembly for a file
+TestCode/src/keyboard_ctrl_car.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/keyboard_ctrl_car.cpp.s
+.PHONY : TestCode/src/keyboard_ctrl_car.cpp.s
+
+TestCode/src/keyboard_ctrl_servo.o: TestCode/src/keyboard_ctrl_servo.cpp.o
+.PHONY : TestCode/src/keyboard_ctrl_servo.o
+
+# target to build an object file
+TestCode/src/keyboard_ctrl_servo.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/keyboard_ctrl_servo.cpp.o
+.PHONY : TestCode/src/keyboard_ctrl_servo.cpp.o
+
+TestCode/src/keyboard_ctrl_servo.i: TestCode/src/keyboard_ctrl_servo.cpp.i
+.PHONY : TestCode/src/keyboard_ctrl_servo.i
+
+# target to preprocess a source file
+TestCode/src/keyboard_ctrl_servo.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/keyboard_ctrl_servo.cpp.i
+.PHONY : TestCode/src/keyboard_ctrl_servo.cpp.i
+
+TestCode/src/keyboard_ctrl_servo.s: TestCode/src/keyboard_ctrl_servo.cpp.s
+.PHONY : TestCode/src/keyboard_ctrl_servo.s
+
+# target to generate assembly for a file
+TestCode/src/keyboard_ctrl_servo.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/keyboard_ctrl_servo.cpp.s
+.PHONY : TestCode/src/keyboard_ctrl_servo.cpp.s
+
 TestCode/src/motor_drive.o: TestCode/src/motor_drive.cpp.o
 .PHONY : TestCode/src/motor_drive.o
 
@@ -633,6 +729,9 @@ help:
 	@echo "... Lib/src/PwmController.o"
 	@echo "... Lib/src/PwmController.i"
 	@echo "... Lib/src/PwmController.s"
+	@echo "... Lib/src/StylePrint.o"
+	@echo "... Lib/src/StylePrint.i"
+	@echo "... Lib/src/StylePrint.s"
 	@echo "... Lib/src/Timer.o"
 	@echo "... Lib/src/Timer.i"
 	@echo "... Lib/src/Timer.s"
@@ -666,6 +765,15 @@ help:
 	@echo "... Lib/src/wonderEcho.o"
 	@echo "... Lib/src/wonderEcho.i"
 	@echo "... Lib/src/wonderEcho.s"
+	@echo "... TestCode/src/gpio_output.o"
+	@echo "... TestCode/src/gpio_output.i"
+	@echo "... TestCode/src/gpio_output.s"
+	@echo "... TestCode/src/keyboard_ctrl_car.o"
+	@echo "... TestCode/src/keyboard_ctrl_car.i"
+	@echo "... TestCode/src/keyboard_ctrl_car.s"
+	@echo "... TestCode/src/keyboard_ctrl_servo.o"
+	@echo "... TestCode/src/keyboard_ctrl_servo.i"
+	@echo "... TestCode/src/keyboard_ctrl_servo.s"
 	@echo "... TestCode/src/motor_drive.o"
 	@echo "... TestCode/src/motor_drive.i"
 	@echo "... TestCode/src/motor_drive.s"

@@ -96,5 +96,8 @@ void filterXCoord(std::vector<cv::Point>& points, std::vector<cv::Point>& filter
 /*放在主函数中的测试函数==============================================================================*/
 int test_pwm_output(void); // 测试PWM输出
 int test_motor_drive(void); // 测试电机驱动
+int test_gpio_output(void); // 测试GPIO输出
+int test_keyboard_ctrl_car(void); // 测试键盘控制小车
+int test_keyboard_ctrl_servo(void); // 测试键盘控制舵机
 
 #endif // #ifndef __TESTCODE_HPP

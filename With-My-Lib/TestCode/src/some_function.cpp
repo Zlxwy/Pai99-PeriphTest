@@ -633,11 +633,11 @@ double calAverXCoordFromRowToRow(cv::Mat& img, std::vector<cv::Point> midPoint, 
 /*将角度映射到计数值，[0~180](d)->[0.5~2.5](ms)*/
 int angle2cnt(double angle, int cntMAX) {
     // 以PWM整个周期计数cntMAX为参照，将[0,180]映射到对应的占空比计数值
-    if(angle >= 0 && angle <= 180)
+    if(angle >= 0 && angle <= 180) // 如果角度在0~180之间，则映射到对应的计数值
         // return (500000.0 + angle * 11111.11111);
         // return ((double)cntMAX/20.0*0.5 + angle*((double)cntMAX/20.0*(2.5-0.5))/180.0);
         return ((double)cntMAX/40.0 + angle*((double)cntMAX/1800.0));
-    else return 500000;
+    else return ((double)cntMAX/40.0 + 90.0*((double)cntMAX/1800.0)); // 否则返回舵机中值对应的计数值
 }
 
 
