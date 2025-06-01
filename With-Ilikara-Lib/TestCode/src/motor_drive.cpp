@@ -30,11 +30,11 @@ int test_motor_drive(void) {
     motorEN.setValue(true); // 设置GPIO输出高电平，启用电机
 
     /*初始化舵机PWM: pwmchip1,pwm0(GPIO65)*/
-    PwmController servoPwm = PwmController(1,0); // 舵机PWM控制器
-    servoPwm.setPolarity(false); // 设置极性为反向
-    servoPwm.setPeriod(SERVO_CNT_MAX); // 设置PWM周期为SERVO_CNT_MAX，对应频率为50Hz
-    servoPwm.setDutyCycle(angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX)); // 设置初始占空比为中间位置
-    servoPwm.enable(); // 启动舵机PWM输出
+    PwmController servoPWM = PwmController(1,0); // 舵机PWM控制器
+    servoPWM.setPolarity(false); // 设置极性为反向
+    servoPWM.setPeriod(SERVO_CNT_MAX); // 设置PWM周期为SERVO_CNT_MAX，对应频率为50Hz
+    servoPWM.setDutyCycle(angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX)); // 设置初始占空比为中间位置
+    servoPWM.enable(); // 启动舵机PWM输出
     
     /*初始化编码器: [0]lsb:pwmchip0(GPIO64),dir:GPIO75, [1]lsb:pwmchip3(GPIO67),dir:GPIO72*/
     ENCODER motorENCODER[2] = { ENCODER(0,75), ENCODER(3,72) }; // 电机编码器

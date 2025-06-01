@@ -11,11 +11,11 @@
 int test_keyboard_ctrl_servo(void) {
     /*初始化舵机PWM: pwmchip1,pwm0(GPIO65)*/
     bool isServoEnabled = false; // 舵机使能状态
-    PwmController servoPwm = PwmController(1,0); // 舵机PWM控制器
-    servoPwm.setPolarity(false); // 设置极性为反向
-    servoPwm.setPeriod(SERVO_CNT_MAX); // 设置PWM周期为SERVO_CNT_MAX，对应频率为50Hz
-    servoPwm.setDutyCycle(angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX)); // 设置初始占空比为中间位置
-    (isServoEnabled) ? servoPwm.enable() : servoPwm.disable(); // 启动或禁用舵机PWM输出
+    PwmController servoPWM = PwmController(1,0); // 舵机PWM控制器
+    servoPWM.setPolarity(false); // 设置极性为反向
+    servoPWM.setPeriod(SERVO_CNT_MAX); // 设置PWM周期为SERVO_CNT_MAX，对应频率为50Hz
+    servoPWM.setDutyCycle(angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX)); // 设置初始占空比为中间位置
+    (isServoEnabled) ? servoPWM.enable() : servoPWM.disable(); // 启动或禁用舵机PWM输出
 
     /*键盘*/
     KeyDef keyboard;
@@ -28,7 +28,7 @@ int test_keyboard_ctrl_servo(void) {
             switch (getKey) {
                 case KEY_SPACE: // 空格键
                     isServoEnabled = !isServoEnabled; // 切换舵机使能状态
-                    (isServoEnabled) ? servoPwm.enable() : servoPwm.disable(); // 启动或禁用舵机PWM输出
+                    (isServoEnabled) ? servoPWM.enable() : servoPWM.disable(); // 启动或禁用舵机PWM输出
                     break;
                 case KEY_A: case KEY_a: // 逗号
                     servo_angle = SERVO_ANGLE_MAX; // 左转
@@ -47,12 +47,12 @@ int test_keyboard_ctrl_servo(void) {
                     break;
             }
             servo_angle = myClamp(servo_angle, SERVO_ANGLE_MIN, SERVO_ANGLE_MAX);
-            servoPwm.setDutyCycle( angle2cnt(servo_angle, SERVO_CNT_MAX) );
+            servoPWM.setDutyCycle( angle2cnt(servo_angle, SERVO_CNT_MAX) );
         }
         clearScreen_ESCAPE; // 清屏
         std::cout << "舵机角度: " << servo_angle << std::endl;
         usleep(ms2us(20));
     }
-    servoPwm.disable(); // 禁用舵机PWM输出
+    servoPWM.disable(); // 禁用舵机PWM输出
     return 0;
 }

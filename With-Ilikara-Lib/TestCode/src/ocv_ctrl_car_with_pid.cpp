@@ -23,11 +23,11 @@
 
 int test_ocv_ctrl_car_with_pid(void) {
     /*初始化舵机PWM: pwmchip1,pwm0(GPIO65)*/
-    PwmController servoPwm = PwmController(1,0); // 舵机PWM控制器
-    servoPwm.setPolarity(false); // 设置极性为反向
-    servoPwm.setPeriod(SERVO_CNT_MAX); // 设置PWM周期为SERVO_CNT_MAX，对应频率为50Hz
-    servoPwm.setDutyCycle( angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX) ); // 设置初始占空比为中间位置
-    servoPwm.enable(); // 启动舵机PWM输出
+    PwmController servoPWM = PwmController(1,0); // 舵机PWM控制器
+    servoPWM.setPolarity(false); // 设置极性为反向
+    servoPWM.setPeriod(SERVO_CNT_MAX); // 设置PWM周期为SERVO_CNT_MAX，对应频率为50Hz
+    servoPWM.setDutyCycle( angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX) ); // 设置初始占空比为中间位置
+    servoPWM.enable(); // 启动舵机PWM输出
 
     /*初始化电机PWM: [0]pwmchip8,pwm2(GPIO89) 和 [1]pwmchip8,pwm1(GPIO88)*/
     bool isMotorEnabled = false; // 电机使能状态
@@ -165,7 +165,7 @@ int test_ocv_ctrl_car_with_pid(void) {
         angleOffset = xlPID.pidCalculate() + pyPID.pidCalculate(); // 将两个PID输出相加，得到舵机的转角偏移值
         angleOffset = myClamp(angleOffset, -SERVO_OFFSET_ANGLE_MAX, +SERVO_OFFSET_ANGLE_MAX); // 限制舵机转角偏移值的范围
         finalAngle = SERVO_ANGLE_MID + angleOffset; // 在中值 SERVO_ANGLE_MID 的基础之上
-        servoPwm.setDutyCycle( angle2cnt(finalAngle, SERVO_CNT_MAX) ); // 将PID输出加载到舵机
+        servoPWM.setDutyCycle( angle2cnt(finalAngle, SERVO_CNT_MAX) ); // 将PID输出加载到舵机
 
         /************************终端打印信息**************************/
         clearScreen_ESCAPE; // 清空终端
@@ -192,7 +192,7 @@ int test_ocv_ctrl_car_with_pid(void) {
     cam.release(); // 释放相机资源
     std::cout << "相机资源已释放" << std::endl; // 添加日志来跟踪资源释放
 
-    servoPwm.setDutyCycle( angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX) );
+    servoPWM.setDutyCycle( angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX) );
     usleep(ms2us(500));
 
     return 0;
