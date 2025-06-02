@@ -12,7 +12,7 @@ int test_keyboard_ctrl_servo(void) {
     /*初始化舵机PWM: pwmchip1,pwm0(GPIO65)*/
     bool isServoEnabled = false; // 舵机使能状态
     PwmController servoPWM = PwmController(1,0); // 舵机PWM控制器
-    servoPWM.setPolarity(false); // 设置极性为反向
+    servoPWM.setPolarity(false); // 设置极性为反向 "inversed"
     servoPWM.setPeriod(SERVO_CNT_MAX); // 设置PWM周期为SERVO_CNT_MAX，对应频率为50Hz
     servoPWM.setDutyCycle(angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX)); // 设置初始占空比为中间位置
     (isServoEnabled) ? servoPWM.enable() : servoPWM.disable(); // 启动或禁用舵机PWM输出

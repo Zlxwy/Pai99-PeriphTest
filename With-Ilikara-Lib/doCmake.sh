@@ -10,7 +10,7 @@ COLOR_RST="\033[0m"
 BUILD_FOLDER="Build"
 CMAKED_NAME="Emain"
 PAI99_RECV_NAME="Etest"
-PAI99_IP_ADDR="192.168.0.200"
+PAI99_IP_ADDR="192.168.1.199"
 
 # 检查构建文件夹是否存在，不存在的话就创建这个文件夹
 if [ ! -d "./${BUILD_FOLDER}" ]; then

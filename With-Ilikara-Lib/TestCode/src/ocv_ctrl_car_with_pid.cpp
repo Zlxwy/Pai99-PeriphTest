@@ -24,7 +24,7 @@
 int test_ocv_ctrl_car_with_pid(void) {
     /*初始化舵机PWM: pwmchip1,pwm0(GPIO65)*/
     PwmController servoPWM = PwmController(1,0); // 舵机PWM控制器
-    servoPWM.setPolarity(false); // 设置极性为反向
+    servoPWM.setPolarity(false); // 设置极性为反向 "inversed"
     servoPWM.setPeriod(SERVO_CNT_MAX); // 设置PWM周期为SERVO_CNT_MAX，对应频率为50Hz
     servoPWM.setDutyCycle( angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX) ); // 设置初始占空比为中间位置
     servoPWM.enable(); // 启动舵机PWM输出
@@ -33,7 +33,7 @@ int test_ocv_ctrl_car_with_pid(void) {
     bool isMotorEnabled = false; // 电机使能状态
     PwmController motorPWM[2] = { PwmController(8,2), PwmController(8,1) }; // 电机PWM控制器
     for (auto &mp: motorPWM) {
-        mp.setPolarity(false); // 设置极性为反向
+        mp.setPolarity(false); // 设置极性为反向 "inversed"
         mp.setPeriod(MOTOR_CNT_MAX); // 设置PWM周期为MOTOR_CNT_MAX，对应频率为20kHz
         mp.setDutyCycle( speedPercent2cnt(CAR_SPEED, MOTOR_CNT_MAX) ); // 设置初始占空比为CAR_SPEED
         (isMotorEnabled) ? mp.enable() : mp.disable(); // 启动或禁用电机PWM输出

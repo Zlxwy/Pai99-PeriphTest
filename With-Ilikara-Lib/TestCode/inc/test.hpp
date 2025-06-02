@@ -97,6 +97,8 @@ void filterXCoord(std::vector<cv::Point>& points, std::vector<cv::Point>& filter
 int test_motor_drive(void); // 电机整体功能初始化代码
 int test_pwm_output(void); // 测试PWM输出
 int test_gpio_output(void); // 测试GPIO输出
+int test_read_num_from_file(void); // 测试从文件中读取数值
+int test_read_distance(void); // 测试读取vl53l0x测量的距离数值
 int test_keyboard_ctrl_servo(void); // 测试键盘控制舵机
 int test_keyboard_ctrl_car(void); // 测试键盘控制小车
 int test_ocv_ctrl_car_with_pid(void); // 测试OpenCV控制小车，使用PID控制舵机转向

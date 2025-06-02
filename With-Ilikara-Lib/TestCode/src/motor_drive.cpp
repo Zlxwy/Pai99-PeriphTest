@@ -11,7 +11,7 @@ int test_motor_drive(void) {
     /*初始化电机PWM: [0]pwmchip8,pwm2(GPIO89) 和 [1]pwmchip8,pwm1(GPIO88)*/
     PwmController motorPWM[2] = { PwmController(8,2), PwmController(8,1) }; // 电机PWM控制器
     for (auto &mp: motorPWM) {
-        mp.setPolarity(false); // 设置极性为反向
+        mp.setPolarity(false); // 设置极性为反向 "inversed"
         mp.setPeriod(MOTOR_CNT_MAX); // 设置PWM周期为MOTOR_CNT_MAX，对应频率为20kHz
         mp.setDutyCycle( speedPercent2cnt(0, MOTOR_CNT_MAX) ); // 设置初始占空比为0
         mp.enable(); // 启动电机PWM输出
@@ -31,7 +31,7 @@ int test_motor_drive(void) {
 
     /*初始化舵机PWM: pwmchip1,pwm0(GPIO65)*/
     PwmController servoPWM = PwmController(1,0); // 舵机PWM控制器
-    servoPWM.setPolarity(false); // 设置极性为反向
+    servoPWM.setPolarity(false); // 设置极性为反向 "inversed"
     servoPWM.setPeriod(SERVO_CNT_MAX); // 设置PWM周期为SERVO_CNT_MAX，对应频率为50Hz
     servoPWM.setDutyCycle(angle2cnt(SERVO_ANGLE_MID, SERVO_CNT_MAX)); // 设置初始占空比为中间位置
     servoPWM.enable(); // 启动舵机PWM输出
