@@ -21,7 +21,7 @@ int test_read_num_from_file(void) {
     while (true) {
         if(kb.kbhit() && kb.readKey() == KEY_ESC) break;
         clearScreen_ESCAPE;
-        std::cout << "Range: " << readNumFromFile<uint16_t>("uint16file.txt") << "(mm)" << std::endl;
+        std::cout << "Range: " << readNumFromFile<uint16_t>("/home/root/myExecs/about_vl53l0x/range_datas/RangeMilliMeter.txt") << "(mm)" << std::endl;
         usleep(ms2us(30));
     }
     return 0;
