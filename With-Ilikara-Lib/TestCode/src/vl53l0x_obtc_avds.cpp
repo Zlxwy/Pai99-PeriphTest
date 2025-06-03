@@ -111,11 +111,11 @@ int test_vl53l0x_obtc_avds(void) {
 
     // 障碍物距离，从文件/home/root/myExecs/about_vl53l0x/range_datas/RangeMilliMeter.txt中读取
     uint16 od = 0; // Obstacle Distance
-    constexpr uint16 odgj = 500;
+    constexpr uint16 odgj = 600;
     int jlgjCnt = 0; // 距离过近计数
     int jlzcCnt = 0; // 距离正常计数
     constexpr int jlgjCntMAX = 5; // 距离过近计数最大值
-    constexpr int jlzcCntMAX = 5; // 距离正常计数最大值
+    constexpr int jlzcCntMAX = 3; // 距离正常计数最大值
     bool isOnAvds = false; // is on avoidance 是否在避障模式
 
     while (true) { // 开始循环
@@ -137,21 +137,22 @@ int test_vl53l0x_obtc_avds(void) {
 
         /*************************障碍物距离获取*******************************/
         od = readNumFromFile<uint16>(DISTANCE_FILE); // 从文件中读取障碍物距离
-        if (!isOnAvds && od<odgj && jlgjCnt<jlgjCntMAX) {
+        if (!isOnAvds && (od<odgj && od>220) && jlgjCnt<jlgjCntMAX) {
         // 如果不在避障模式，且距离过近，距离过近还没到最大值
             jlgjCnt++; // 距离过近计数器加1
-        } else if (!isOnAvds && od<odgj && jlgjCnt>=jlgjCntMAX) {
+        } else if (!isOnAvds && (od<odgj && od>220) && jlgjCnt>=jlgjCntMAX) {
         // 如果不在避障模式，且距离过近，距离过近已经达到最大值
             jlgjCnt = 0; // 距离过近计数器重置为0
             isOnAvds = true; // 开启避障模式
-        } else if (isOnAvds && od>=odgj && jlzcCnt<jlzcCntMAX) {
+        } else if (!isOnAvds) jlgjCnt = 0;
+        else if (isOnAvds && (od>=odgj || od < 220) && jlzcCnt<jlzcCntMAX) {
         // 如果在避障模式，且距离大于过近距离，距离正常还没到最大值
             jlzcCnt++; // 距离正常计数器加1
-        } else if (isOnAvds && od>=odgj && jlzcCnt>=jlzcCntMAX) {
+        } else if (isOnAvds && (od>=odgj || od<220) && jlzcCnt>=jlzcCntMAX) {
         // 如果在避障模式，且距离大于过近距离，距离正常已经达到最大值
             jlzcCnt = 0; // 距离正常计数器重置为0
             isOnAvds = false; // 关闭避障模式
-        }
+        } else if (isOnAvds) jlzcCnt = 0;
 
         /*************************获取一张图像，转成黑白图像，并找出双边线的点坐标************************/
         bool ret = cam.read(frame); // 从相机获取新的一帧
@@ -196,11 +197,15 @@ int test_vl53l0x_obtc_avds(void) {
                 );
             }
             double py = calAverXCoordFromRowToRow(resizedFrame, midPointsFiltered, 30, 50); // 计算X坐标平均值
-            if (py > pyPID.targetVal) { // 如果中线偏右
-                xlPID.measuredVal = xlPID.targetVal + xlPID.errorLimit[0]; // 设置xlPID的测量值为最大偏斜值
-                pyPID.measuredVal = pyPID.targetVal;
-            } else { // 如果中线偏左
-                xlPID.measuredVal = xlPID.targetVal + xlPID.errorLimit[1]; // 设置xlPID的测量值为最小偏斜值
+            // if (py > pyPID.targetVal) { // 如果中线偏右
+            //     xlPID.measuredVal = xlPID.targetVal - 0.09;
+            //     pyPID.measuredVal = pyPID.targetVal;
+            // } else { // 如果中线偏左
+            //     xlPID.measuredVal = xlPID.targetVal + 0.09;
+            //     pyPID.measuredVal = pyPID.targetVal;
+            // }
+            if (py < pyPID.targetVal) { // 如果中线偏左
+                xlPID.measuredVal = xlPID.targetVal + 0.43;
                 pyPID.measuredVal = pyPID.targetVal;
             }
         }
@@ -214,20 +219,20 @@ int test_vl53l0x_obtc_avds(void) {
         /************************终端打印信息**************************/
         clearScreen_ESCAPE; // 清空终端
         std::cout
-            << "测量距离：" << od << "(mm)" << "\n"
-            << "过近计数：" << "[" << jlgjCnt << "/" <<jlgjCntMAX << "]" << "\n"
-            << "避障开启：" << ((isOnAvds) ? "是" : "否") << "\n"
-            << "--------------------------------" << "\n"
-            << "帧率：" << fpsCnt.fpsStr << "\n"
-            << "阈值：" << GRAY2BIN_THRESH << "\n"
-            << "偏斜：" << xlPID.measuredVal << "\n"
-            << "偏移：" << pyPID.measuredVal << "\n"
-            << "转向：" << ( ((xlPID.measuredVal-xlPID.targetVal) < -0.2) ? "向右" : 
-                          ( ((xlPID.measuredVal-xlPID.targetVal) > +0.2) ? "向左" : "直走")) << "\n"
-            << "角度：" << finalAngle << " (" << angle2cnt(finalAngle, SERVO_CNT_MAX) << ")" << "\n"
-            << "--------------------------------" << "\n"
-            << FG_RED+BOLD+UNDERLINE << "按空格键启动/停止电机" << STYLE_RST << "\n"
-            << "电机启动：" << ((isMotorEnabled) ? "是" : "否") << std::endl;
+            // << "测量距离：" << od << "(mm)" << "\n"
+            // << "过近计数：" << "[" << jlgjCnt << "/" <<jlgjCntMAX << "]" << "\n"
+            // << "避障开启：" << ((isOnAvds) ? "是" : "否") << "\n"
+            // << "--------------------------------" << "\n"
+            << "帧率：" << fpsCnt.fpsStr << "\n";
+            // << "阈值：" << GRAY2BIN_THRESH << "\n"
+            // << "偏斜：" << xlPID.measuredVal << "\n"
+            // << "偏移：" << pyPID.measuredVal << "\n"
+            // << "转向：" << ( ((xlPID.measuredVal-xlPID.targetVal) < -0.2) ? "向右" : 
+            //               ( ((xlPID.measuredVal-xlPID.targetVal) > +0.2) ? "向左" : "直走")) << "\n"
+            // << "角度：" << finalAngle << " (" << angle2cnt(finalAngle, SERVO_CNT_MAX) << ")" << "\n"
+            // << "--------------------------------" << "\n"
+            // << FG_RED+BOLD+UNDERLINE << "按空格键启动/停止电机" << STYLE_RST << "\n"
+            // << "电机启动：" << ((isMotorEnabled) ? "是" : "否") << std::endl;
     }
 
     cam.release(); // 释放相机资源

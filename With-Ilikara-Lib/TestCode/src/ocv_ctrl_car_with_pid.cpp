@@ -18,7 +18,7 @@
 #include "test.hpp"
 
 #define CAR_DIRECTION true
-#define CAR_SPEED  20 // 车子速度（百分比）
+#define CAR_SPEED  22 // 车子速度（百分比）
 
 int test_ocv_ctrl_car_with_pid(void) {
     /*初始化舵机PWM: pwmchip1,pwm0(GPIO65)*/
@@ -90,9 +90,9 @@ int test_ocv_ctrl_car_with_pid(void) {
     // 关于变量py的PID参数定义
     PidObject pyPID;
         pyPID.isPolOfMeaValCsstWithOutVal = false;
-        pyPID.kP = 0.03;
+        pyPID.kP = 0.05;
         pyPID.kI = 0.0;
-        pyPID.kD = 0.9;
+        pyPID.kD = 0.5;
         pyPID.isFirstOrderFilterEnabled = false;
         pyPID.filterParam = 0.0;
         pyPID.targetVal = (0+RESIZED_WIDTH-1)/2.0;
