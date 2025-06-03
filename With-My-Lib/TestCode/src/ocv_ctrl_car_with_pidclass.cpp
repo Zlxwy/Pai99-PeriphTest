@@ -71,8 +71,8 @@ int test_ocv_ctrl_car_with_pidclass(void) {
         xlPID.targetVal = 0.0;
         xlPID.measuredVal = 0.0;
         xlPID.isErrorLimitEnabled = true;
-        xlPID.errorLimit[0] = xlPID.targetVal - 0.7;
-        xlPID.errorLimit[1] = xlPID.targetVal + 0.7;
+        xlPID.errorLimit[0] = -0.7;
+        xlPID.errorLimit[1] = +0.7;
         xlPID.isIntegLimitEnabled = true;
         xlPID.integLimit[0] = -20.0;
         xlPID.integLimit[1] = +20.0;
@@ -88,8 +88,8 @@ int test_ocv_ctrl_car_with_pidclass(void) {
         pyPID.targetVal = (0+RESIZED_WIDTH-1)/2.0;
         pyPID.measuredVal = 0.0;
         pyPID.isErrorLimitEnabled = true;
-        pyPID.errorLimit[0] = pyPID.targetVal - 30.0;
-        pyPID.errorLimit[1] = pyPID.targetVal + 30.0;
+        pyPID.errorLimit[0] = -30.0;
+        pyPID.errorLimit[1] = +30.0;
         pyPID.isIntegLimitEnabled = true;
         pyPID.integLimit[0] = -500.0;
         pyPID.integLimit[1] = +500.0;

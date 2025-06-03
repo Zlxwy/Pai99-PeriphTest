@@ -129,6 +129,30 @@ Emain/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/build
 .PHONY : Emain/fast
 
+Lib/src/CalFPS.o: Lib/src/CalFPS.cpp.o
+.PHONY : Lib/src/CalFPS.o
+
+# target to build an object file
+Lib/src/CalFPS.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/CalFPS.cpp.o
+.PHONY : Lib/src/CalFPS.cpp.o
+
+Lib/src/CalFPS.i: Lib/src/CalFPS.cpp.i
+.PHONY : Lib/src/CalFPS.i
+
+# target to preprocess a source file
+Lib/src/CalFPS.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/CalFPS.cpp.i
+.PHONY : Lib/src/CalFPS.cpp.i
+
+Lib/src/CalFPS.s: Lib/src/CalFPS.cpp.s
+.PHONY : Lib/src/CalFPS.s
+
+# target to generate assembly for a file
+Lib/src/CalFPS.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/CalFPS.cpp.s
+.PHONY : Lib/src/CalFPS.cpp.s
+
 Lib/src/GPIO.o: Lib/src/GPIO.cpp.o
 .PHONY : Lib/src/GPIO.o
 
@@ -777,6 +801,30 @@ TestCode/src/some_function.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.s
 .PHONY : TestCode/src/some_function.cpp.s
 
+TestCode/src/vl53l0x_obtc_avds.o: TestCode/src/vl53l0x_obtc_avds.cpp.o
+.PHONY : TestCode/src/vl53l0x_obtc_avds.o
+
+# target to build an object file
+TestCode/src/vl53l0x_obtc_avds.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.o
+.PHONY : TestCode/src/vl53l0x_obtc_avds.cpp.o
+
+TestCode/src/vl53l0x_obtc_avds.i: TestCode/src/vl53l0x_obtc_avds.cpp.i
+.PHONY : TestCode/src/vl53l0x_obtc_avds.i
+
+# target to preprocess a source file
+TestCode/src/vl53l0x_obtc_avds.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.i
+.PHONY : TestCode/src/vl53l0x_obtc_avds.cpp.i
+
+TestCode/src/vl53l0x_obtc_avds.s: TestCode/src/vl53l0x_obtc_avds.cpp.s
+.PHONY : TestCode/src/vl53l0x_obtc_avds.s
+
+# target to generate assembly for a file
+TestCode/src/vl53l0x_obtc_avds.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.s
+.PHONY : TestCode/src/vl53l0x_obtc_avds.cpp.s
+
 TestCode/src/wonderEcho_sound.o: TestCode/src/wonderEcho_sound.cpp.o
 .PHONY : TestCode/src/wonderEcho_sound.o
 
@@ -834,6 +882,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Emain"
+	@echo "... Lib/src/CalFPS.o"
+	@echo "... Lib/src/CalFPS.i"
+	@echo "... Lib/src/CalFPS.s"
 	@echo "... Lib/src/GPIO.o"
 	@echo "... Lib/src/GPIO.i"
 	@echo "... Lib/src/GPIO.s"
@@ -915,6 +966,9 @@ help:
 	@echo "... TestCode/src/some_function.o"
 	@echo "... TestCode/src/some_function.i"
 	@echo "... TestCode/src/some_function.s"
+	@echo "... TestCode/src/vl53l0x_obtc_avds.o"
+	@echo "... TestCode/src/vl53l0x_obtc_avds.i"
+	@echo "... TestCode/src/vl53l0x_obtc_avds.s"
 	@echo "... TestCode/src/wonderEcho_sound.o"
 	@echo "... TestCode/src/wonderEcho_sound.i"
 	@echo "... TestCode/src/wonderEcho_sound.s"

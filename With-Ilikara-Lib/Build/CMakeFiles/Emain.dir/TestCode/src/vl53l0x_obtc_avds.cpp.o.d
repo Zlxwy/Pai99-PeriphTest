@@ -1,5 +1,5 @@
-CMakeFiles/Emain.dir/TestCode/src/ocv_ctrl_car_with_pid.cpp.o: \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/ocv_ctrl_car_with_pid.cpp \
+CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.o: \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/vl53l0x_obtc_avds.cpp \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/stdc-predef.h \
  /home/root/opencv/include/opencv4/opencv2/opencv.hpp \
  /home/root/opencv/include/opencv4/opencv2/opencv_modules.hpp \

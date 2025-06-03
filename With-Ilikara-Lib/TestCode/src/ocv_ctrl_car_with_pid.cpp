@@ -8,14 +8,13 @@
 #include <string>       // 提供 std::string 类，用于处理字符串，方便进行字符串操作，如拼接、查找等。
 #include <unistd.h>     // 包含许多Unix标准系统调用和函数，像 read 、 write 、 close 等，用于文件操作、进程控制等。
 #include <fstream>      // 用于文件流操作，可进行文件的读写。
-#include <sstream>      // 提供字符串流功能，可在字符串和其他数据类型间转换。
 #include <cstring>      // 包含许多操作C风格字符串（字符数组）的函数，如 strcpy 、 strlen 等。
-#include <chrono>       // 提供时间相关的功能，如计时器。
 #include "StylePrint.hpp"
 #include "PIDObject.hpp"
 #include "GPIO.h"
 #include "PwmController.h"
 #include "KeyDef.hpp"
+#include "CalFPS.hpp"
 #include "test.hpp"
 
 #define CAR_DIRECTION true
@@ -51,8 +50,9 @@ int test_ocv_ctrl_car_with_pid(void) {
     motorEN.setDirection("out"); // 设置GPIO方向为输出
     motorEN.setValue(true); // 设置GPIO输出高电平，启用电机
     
-    /*键盘keyboard*/
-    KeyDef kb;
+    /*键盘keyboard、帧率计数器fpsCnt*/
+    KeyDef kb; // 键盘对象，用于检测按键事件
+    CalFPS fpsCnt; // 帧率计数器对象，用于计算帧率
 
     /*打开相机并设置分辨率*/
     cv::VideoCapture cam(CAM_INDEX); // 打开相机
@@ -63,11 +63,6 @@ int test_ocv_ctrl_car_with_pid(void) {
     cam.set(cv::CAP_PROP_FRAME_WIDTH, CAM_WIDTH); // 设置宽度
     cam.set(cv::CAP_PROP_FRAME_HEIGHT, CAM_HEIGHT); // 设置高度
     std::cout << cam.get(cv::CAP_PROP_FRAME_WIDTH) << "*" << cam.get(cv::CAP_PROP_FRAME_HEIGHT) << std::endl;
-
-    /*初始化帧数和时间戳*/
-    int frameCount = 0;
-    auto startTime = std::chrono::steady_clock::now();
-    double fps = 0;
 
     /*图像矩阵定义*/
     cv::Mat frame;
@@ -86,8 +81,8 @@ int test_ocv_ctrl_car_with_pid(void) {
         xlPID.targetVal = 0.0;
         xlPID.measuredVal = 0.0;
         xlPID.isErrorLimitEnabled = true;
-        xlPID.errorLimit[0] = xlPID.targetVal - 0.7;
-        xlPID.errorLimit[1] = xlPID.targetVal + 0.7;
+        xlPID.errorLimit[0] = -0.7;
+        xlPID.errorLimit[1] = +0.7;
         xlPID.isIntegLimitEnabled = true;
         xlPID.integLimit[0] = -20.0;
         xlPID.integLimit[1] = +20.0;
@@ -103,8 +98,8 @@ int test_ocv_ctrl_car_with_pid(void) {
         pyPID.targetVal = (0+RESIZED_WIDTH-1)/2.0;
         pyPID.measuredVal = 0.0;
         pyPID.isErrorLimitEnabled = true;
-        pyPID.errorLimit[0] = pyPID.targetVal - 30.0;
-        pyPID.errorLimit[1] = pyPID.targetVal + 30.0;
+        pyPID.errorLimit[0] = -30.0;
+        pyPID.errorLimit[1] = +30.0;
         pyPID.isIntegLimitEnabled = true;
         pyPID.integLimit[0] = -500.0;
         pyPID.integLimit[1] = +500.0;
@@ -113,17 +108,12 @@ int test_ocv_ctrl_car_with_pid(void) {
     double angleOffset = 0; // PID计算输出
     double finalAngle = 0; // 施加到舵机上的角度值
 
+    // 障碍物距离，从文件/home/root/myExecs/about_vl53l0x/range_datas/RangeMilliMeter.txt中读取
+    double obstacleDistance;
+
     while (true) { // 开始循环
         /*************************帧率计算*******************************/
-        frameCount++; // 更新帧数
-        auto currentTime = std::chrono::steady_clock::now(); // 获取当前时间
-        double elapsedTime = std::chrono::duration<double>(currentTime - startTime).count(); // 计算时间差
-        if (elapsedTime >= 1.0) { // 每秒更新一次帧率
-            fps = frameCount / elapsedTime; // 计算帧率
-            frameCount = 0; startTime = currentTime; // 重置帧数和时间戳
-        }
-        std::stringstream ss_fps; // 创建一个字符串流
-        ss_fps << "FPS:" << std::fixed << std::setprecision(2) << fps; // FPS:xx.xx
+        fpsCnt.updateFPS(); // 更新帧率计数器
 
         /*************************图像获取*******************************/
         bool ret = cam.read(frame); // 从相机获取新的一帧
@@ -154,40 +144,43 @@ int test_ocv_ctrl_car_with_pid(void) {
         }
         std::vector<cv::Point> midPointFiltered; // 用于存储对X坐标值滤波后的中点坐标
         filterXCoord(midPoint,midPointFiltered,7);
-        
+            
         /**********************计算在某两行之间中点的斜率*************************/
         double xl = calAverSlopeFromRowToRow(resizedFrame, midPointFiltered, ROW_UP, ROW_DOWN); // 计算中线的偏斜
         double py = calAverXCoordFromRowToRow(resizedFrame, midPointFiltered, ROW_UP, ROW_DOWN); // 计算X坐标平均值
 
-        /********************根据计算出来的斜率，控制硬件驱动****************/
+        /********************根据计算出来的斜率xl和偏斜py，计算输出控制量****************/
         xlPID.measuredVal = xl; // 将xl的值赋给xlPID的测量值
         pyPID.measuredVal = py; // 将py的值赋给pyPID的测量值
         angleOffset = xlPID.pidCalculate() + pyPID.pidCalculate(); // 将两个PID输出相加，得到舵机的转角偏移值
         angleOffset = myClamp(angleOffset, -SERVO_OFFSET_ANGLE_MAX, +SERVO_OFFSET_ANGLE_MAX); // 限制舵机转角偏移值的范围
         finalAngle = SERVO_ANGLE_MID + angleOffset; // 在中值 SERVO_ANGLE_MID 的基础之上
+        
+        /**************************舵机硬件驱动********************************/
         servoPWM.setDutyCycle( angle2cnt(finalAngle, SERVO_CNT_MAX) ); // 将PID输出加载到舵机
 
         /************************终端打印信息**************************/
         clearScreen_ESCAPE; // 清空终端
-        std::cout << "帧率：" << ss_fps.str() << std::endl;
-        std::cout << "阈值：" << th << std::endl;
-        std::cout << "偏斜：" << xl << std::endl;
-        std::cout << "偏移：" << py << std::endl;
-        std::cout << "转向：" << ((xl<-0.2) ? "向右" : ((xl>0.2)?"向左":"直走")) << std::endl;
-        std::cout << "角度：" << finalAngle << " (" << angle2cnt(finalAngle, SERVO_CNT_MAX) << ")" << std::endl;
-        stylePrint(FG_RED+BOLD+UNDERLINE, "按空格键启动/停止电机\n");
-        std::cout << "启动：" << ((isMotorEnabled) ? "是" : "否") << std::endl;
+        std::cout
+            << "帧率：" << fpsCnt.fpsStr << "\n"
+            << "阈值：" << th << "\n"
+            << "偏斜：" << xl << "\n"
+            << "偏移：" << py << "\n"
+            << "转向：" << ((xl<-0.2) ? "向右" : ((xl>0.2)?"向左":"直走")) << "\n"
+            << "角度：" << finalAngle << " (" << angle2cnt(finalAngle, SERVO_CNT_MAX) << ")" << "\n"
+            << FG_RED+BOLD+UNDERLINE << "按空格键启动/停止电机" << STYLE_RST << "\n"
+            << "启动：" << ((isMotorEnabled) ? "是" : "否") << std::endl;
 
         /******************************检测按键***********************************/        
         if ( kb.kbhit() ) {
-            int keyGet = kb.readKey();
-            if( keyGet == KEY_ESC ) break;
-            else if (keyGet == KEY_SPACE) {
+            int getKey = kb.readKey();
+            if( getKey == KEY_ESC ) break;
+            else if (getKey == KEY_SPACE) {
                 isMotorEnabled = !isMotorEnabled; //翻转电机使能状态
                 for (auto &mp: motorPWM) (isMotorEnabled)?mp.enable():mp.disable();
             }
         }
-    }
+    } // while (true)
 
     cam.release(); // 释放相机资源
     std::cout << "相机资源已释放" << std::endl; // 添加日志来跟踪资源释放

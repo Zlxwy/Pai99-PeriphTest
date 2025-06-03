@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Lib/src/CalFPS.cpp" "CMakeFiles/Emain.dir/Lib/src/CalFPS.cpp.o" "gcc" "CMakeFiles/Emain.dir/Lib/src/CalFPS.cpp.o.d"
   "/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Lib/src/GPIO.cpp" "CMakeFiles/Emain.dir/Lib/src/GPIO.cpp.o" "gcc" "CMakeFiles/Emain.dir/Lib/src/GPIO.cpp.o.d"
   "/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Lib/src/KeyDef.cpp" "CMakeFiles/Emain.dir/Lib/src/KeyDef.cpp.o" "gcc" "CMakeFiles/Emain.dir/Lib/src/KeyDef.cpp.o.d"
   "/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Lib/src/MotorController.cpp" "CMakeFiles/Emain.dir/Lib/src/MotorController.cpp.o" "gcc" "CMakeFiles/Emain.dir/Lib/src/MotorController.cpp.o.d"
@@ -35,6 +36,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/read_distance.cpp" "CMakeFiles/Emain.dir/TestCode/src/read_distance.cpp.o" "gcc" "CMakeFiles/Emain.dir/TestCode/src/read_distance.cpp.o.d"
   "/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/read_num_from_file.cpp" "CMakeFiles/Emain.dir/TestCode/src/read_num_from_file.cpp.o" "gcc" "CMakeFiles/Emain.dir/TestCode/src/read_num_from_file.cpp.o.d"
   "/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/some_function.cpp" "CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o" "gcc" "CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o.d"
+  "/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/vl53l0x_obtc_avds.cpp" "CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.o" "gcc" "CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.o.d"
   "/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/wonderEcho_sound.cpp" "CMakeFiles/Emain.dir/TestCode/src/wonderEcho_sound.cpp.o" "gcc" "CMakeFiles/Emain.dir/TestCode/src/wonderEcho_sound.cpp.o.d"
   "/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/User/main.cpp" "CMakeFiles/Emain.dir/User/main.cpp.o" "gcc" "CMakeFiles/Emain.dir/User/main.cpp.o.d"
   )

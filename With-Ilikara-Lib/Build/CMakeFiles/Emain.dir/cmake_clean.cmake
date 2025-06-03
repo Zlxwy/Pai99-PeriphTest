@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Emain.dir/Lib/src/CalFPS.cpp.o"
+  "CMakeFiles/Emain.dir/Lib/src/CalFPS.cpp.o.d"
   "CMakeFiles/Emain.dir/Lib/src/GPIO.cpp.o"
   "CMakeFiles/Emain.dir/Lib/src/GPIO.cpp.o.d"
   "CMakeFiles/Emain.dir/Lib/src/KeyDef.cpp.o"
@@ -53,6 +55,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Emain.dir/TestCode/src/read_num_from_file.cpp.o.d"
   "CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o"
   "CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.o.d"
+  "CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.o"
+  "CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.o.d"
   "CMakeFiles/Emain.dir/TestCode/src/wonderEcho_sound.cpp.o"
   "CMakeFiles/Emain.dir/TestCode/src/wonderEcho_sound.cpp.o.d"
   "CMakeFiles/Emain.dir/User/main.cpp.o"

@@ -12,8 +12,8 @@
 // xlPID.targetVal = 0.0;
 // xlPID.measuredVal = 0.0;
 // xlPID.isErrorLimitEnabled = true;
-// xlPID.errorLimit[0] = xlPID.targetVal - 0.7;
-// xlPID.errorLimit[1] = xlPID.targetVal + 0.7;
+// xlPID.errorLimit[0] = -0.7;
+// xlPID.errorLimit[1] = +0.7;
 // xlPID.isIntegLimitEnabled = true;
 // xlPID.integLimit[0] = -70.0;
 // xlPID.integLimit[1] = +70.0;
