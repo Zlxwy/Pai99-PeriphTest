@@ -1,3 +1,4 @@
+// 这个程序用于展示车子运动器件部分的初始化代码，以及调用控制接口的示例。
 #include <iostream>
 #include <unistd.h>
 #include "test.hpp"
