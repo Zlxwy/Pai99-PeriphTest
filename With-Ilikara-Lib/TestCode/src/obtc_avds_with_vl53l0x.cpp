@@ -17,11 +17,11 @@
 #include "CalFPS.hpp"
 #include "test.hpp"
 
-#define CAR_DIRECTION  true
-#define CAR_SPEED      20 // 车子速度（百分比）
+#define CAR_DIRECTION ((bool)1)
+#define CAR_SPEED     ((int)22) // 车子速度（百分比）
 #define DISTANCE_FILE  std::string("/home/root/myExecs/about_vl53l0x/range_datas/RangeMilliMeter.txt")
 
-int test_vl53l0x_obtc_avds(void) {
+int test_obtc_avds_with_vl53l0x(void) {
     /*初始化舵机PWM: pwmchip1,pwm0(GPIO65)*/
     PwmController servoPWM = PwmController(1,0); // 舵机PWM控制器
     servoPWM.setPolarity(false); // 设置极性为反向 "inversed"
@@ -219,20 +219,20 @@ int test_vl53l0x_obtc_avds(void) {
         /************************终端打印信息**************************/
         clearScreen_ESCAPE; // 清空终端
         std::cout
-            // << "测量距离：" << od << "(mm)" << "\n"
-            // << "过近计数：" << "[" << jlgjCnt << "/" <<jlgjCntMAX << "]" << "\n"
-            // << "避障开启：" << ((isOnAvds) ? "是" : "否") << "\n"
-            // << "--------------------------------" << "\n"
-            << "帧率：" << fpsCnt.fpsStr << "\n";
-            // << "阈值：" << GRAY2BIN_THRESH << "\n"
-            // << "偏斜：" << xlPID.measuredVal << "\n"
-            // << "偏移：" << pyPID.measuredVal << "\n"
-            // << "转向：" << ( ((xlPID.measuredVal-xlPID.targetVal) < -0.2) ? "向右" : 
-            //               ( ((xlPID.measuredVal-xlPID.targetVal) > +0.2) ? "向左" : "直走")) << "\n"
-            // << "角度：" << finalAngle << " (" << angle2cnt(finalAngle, SERVO_CNT_MAX) << ")" << "\n"
-            // << "--------------------------------" << "\n"
-            // << FG_RED+BOLD+UNDERLINE << "按空格键启动/停止电机" << STYLE_RST << "\n"
-            // << "电机启动：" << ((isMotorEnabled) ? "是" : "否") << std::endl;
+            << "测量距离：" << od << "(mm)" << "\n"
+            << "过近计数：" << "[" << jlgjCnt << "/" <<jlgjCntMAX << "]" << "\n"
+            << "避障开启：" << ((isOnAvds) ? "是" : "否") << "\n"
+            << "--------------------------------" << "\n"
+            << "帧率：" << fpsCnt.fpsStr << "\n"
+            << "阈值：" << GRAY2BIN_THRESH << "\n"
+            << "偏斜：" << xlPID.measuredVal << "\n"
+            << "偏移：" << pyPID.measuredVal << "\n"
+            << "转向：" << ( ((xlPID.measuredVal-xlPID.targetVal) < -0.2) ? "向右" : 
+                          ( ((xlPID.measuredVal-xlPID.targetVal) > +0.2) ? "向左" : "直走")) << "\n"
+            << "角度：" << finalAngle << " (" << angle2cnt(finalAngle, SERVO_CNT_MAX) << ")" << "\n"
+            << "--------------------------------" << "\n"
+            << FG_RED+BOLD+UNDERLINE << "按空格键启动/停止电机" << STYLE_RST << "\n"
+            << "电机启动：" << ((isMotorEnabled) ? "是" : "否") << std::endl;
     }
 
     cam.release(); // 释放相机资源

@@ -20,7 +20,7 @@
 #define CAR_DIRECTION ((bool)1)
 #define CAR_SPEED     ((int)22) // 车子速度（百分比）
 
-int test_ocv_ctrl_car_with_pid(void) {
+int test_obtc_avds_with_cam(void) {
     /*初始化舵机PWM: pwmchip1,pwm0(GPIO65)*/
     PwmController servoPWM = PwmController(1,0); // 舵机PWM控制器
     servoPWM.setPolarity(false); // 设置极性为反向 "inversed"
@@ -162,13 +162,37 @@ int test_ocv_ctrl_car_with_pid(void) {
             << FG_YELLOW+BOLD+UNDERLINE << "按空格键启动/停止电机" << STYLE_RST << "\n"
             << "启动：" << ((isMotorEnabled) ? "是" : "否") << std::endl;
 
-        /******************************检测按键***********************************/        
+        /******************************检测按键***********************************/
+        #define XL_OFFSET ((double)0.2) // xl的偏移量
+        #define PY_OFFSET ((double)20.0) // py的偏移量
         if ( kb.kbhit() ) {
             int getKey = kb.readKey();
             if( getKey == KEY_ESC ) break;
-            else if (getKey == KEY_SPACE) {
-                isMotorEnabled = !isMotorEnabled; //翻转电机使能状态
-                for (auto &mp: motorPWM) (isMotorEnabled)?mp.enable():mp.disable();
+            switch (getKey) {
+                case KEY_SPACE: // 启动/停止电机
+                    isMotorEnabled = !isMotorEnabled; // 翻转电机使能状态
+                    if (isMotorEnabled) { // 如果是要启动电机
+                        for (auto &mp: motorPWM) mp.enable();
+                    } else if (!isMotorEnabled) { // 如果是要停止电机
+                        for (auto &md: motorDIR) md.setValue(!CAR_DIRECTION); // 反转电机方向
+                        usleep(ms2us(500)); // 等待500毫秒（增加一个刹车作用）
+                        for (auto &mp: motorPWM) mp.disable(); // 关闭电机PWM输出
+                        for (auto &md: motorDIR) md.setValue(CAR_DIRECTION); // 恢复电机方向
+                    }
+                    // 不用加break，还需要执行下面的case
+                case KEY_X: case KEY_x: // 恢复为靠中行驶
+                    xlPID.targetVal = 0.0;
+                    pyPID.targetVal = (0+RESIZED_WIDTH-1) / 2.0;
+                    break;
+                case KEY_Z: case KEY_z: // 变化为靠左行驶
+                    xlPID.targetVal = 0.0 - XL_OFFSET;
+                    pyPID.targetVal = (0+RESIZED_WIDTH-1) / 2.0 - PY_OFFSET;
+                    break;
+                case KEY_C: case KEY_c: // 变化为靠右行驶
+                    xlPID.targetVal = 0.0 + XL_OFFSET;
+                    pyPID.targetVal = (0+RESIZED_WIDTH-1) / 2.0 + PY_OFFSET;
+                    break;
+                default: break;
             }
         }
     } // while (true)

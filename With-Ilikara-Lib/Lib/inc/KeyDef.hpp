@@ -12,10 +12,18 @@ constexpr auto KEY_ESC = 27;
 #define KEY_S       83
 #define KEY_A       65
 #define KEY_D       68
+#define KEY_Z       90
+#define KEY_X       88
+#define KEY_C       67
+
 #define KEY_w       119
 #define KEY_s       115
 #define KEY_a       97
 #define KEY_d       100
+#define KEY_z       122
+#define KEY_x       120
+#define KEY_c       99
+
 #define KEY_0       48
 #define KEY_1       49
 #define KEY_2       50

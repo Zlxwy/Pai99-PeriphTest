@@ -12,5 +12,6 @@ int main(void) {
     // test_keyboard_ctrl_servo(); // 测试键盘控制舵机（已验证）
     // test_keyboard_ctrl_car(); // 测试键盘控制小车（已验证）
     // test_ocv_ctrl_car_with_pid(); // 测试PID控制小车（已验证）
-    test_vl53l0x_obtc_avds(); // 测试避障模式下的PID控制小车（已验证，效果不好）
+    // test_obtc_avds_with_vl53l0x(); // 测试利用vl53l0x激光测距仪进行避障控制小车（已验证，效果不好）
+    test_obtc_avds_with_cam(); // 测试利用摄像头进行避障控制小车
 }

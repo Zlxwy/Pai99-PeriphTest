@@ -104,6 +104,7 @@ int test_wonderEcho_sound(void); // 测试wonderEcho声音模块
 int test_keyboard_ctrl_servo(void); // 测试键盘控制舵机
 int test_keyboard_ctrl_car(void); // 测试键盘控制小车
 int test_ocv_ctrl_car_with_pid(void); // 测试OpenCV控制小车，使用PID控制舵机转向
-int test_vl53l0x_obtc_avds(void); // 测试vl53l0x测距模块
+int test_obtc_avds_with_vl53l0x(void); // 测试利用vl53l0x激光测距仪进行避障控制小车
+int test_obtc_avds_with_cam(void); // 测试利用摄像头进行避障控制小车
 
 #endif // #ifndef __TESTCODE_HPP

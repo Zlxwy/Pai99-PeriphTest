@@ -681,6 +681,54 @@ TestCode/src/motor_drive.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/motor_drive.cpp.s
 .PHONY : TestCode/src/motor_drive.cpp.s
 
+TestCode/src/obtc_avds_with_cam.o: TestCode/src/obtc_avds_with_cam.cpp.o
+.PHONY : TestCode/src/obtc_avds_with_cam.o
+
+# target to build an object file
+TestCode/src/obtc_avds_with_cam.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/obtc_avds_with_cam.cpp.o
+.PHONY : TestCode/src/obtc_avds_with_cam.cpp.o
+
+TestCode/src/obtc_avds_with_cam.i: TestCode/src/obtc_avds_with_cam.cpp.i
+.PHONY : TestCode/src/obtc_avds_with_cam.i
+
+# target to preprocess a source file
+TestCode/src/obtc_avds_with_cam.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/obtc_avds_with_cam.cpp.i
+.PHONY : TestCode/src/obtc_avds_with_cam.cpp.i
+
+TestCode/src/obtc_avds_with_cam.s: TestCode/src/obtc_avds_with_cam.cpp.s
+.PHONY : TestCode/src/obtc_avds_with_cam.s
+
+# target to generate assembly for a file
+TestCode/src/obtc_avds_with_cam.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/obtc_avds_with_cam.cpp.s
+.PHONY : TestCode/src/obtc_avds_with_cam.cpp.s
+
+TestCode/src/obtc_avds_with_vl53l0x.o: TestCode/src/obtc_avds_with_vl53l0x.cpp.o
+.PHONY : TestCode/src/obtc_avds_with_vl53l0x.o
+
+# target to build an object file
+TestCode/src/obtc_avds_with_vl53l0x.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/obtc_avds_with_vl53l0x.cpp.o
+.PHONY : TestCode/src/obtc_avds_with_vl53l0x.cpp.o
+
+TestCode/src/obtc_avds_with_vl53l0x.i: TestCode/src/obtc_avds_with_vl53l0x.cpp.i
+.PHONY : TestCode/src/obtc_avds_with_vl53l0x.i
+
+# target to preprocess a source file
+TestCode/src/obtc_avds_with_vl53l0x.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/obtc_avds_with_vl53l0x.cpp.i
+.PHONY : TestCode/src/obtc_avds_with_vl53l0x.cpp.i
+
+TestCode/src/obtc_avds_with_vl53l0x.s: TestCode/src/obtc_avds_with_vl53l0x.cpp.s
+.PHONY : TestCode/src/obtc_avds_with_vl53l0x.s
+
+# target to generate assembly for a file
+TestCode/src/obtc_avds_with_vl53l0x.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/obtc_avds_with_vl53l0x.cpp.s
+.PHONY : TestCode/src/obtc_avds_with_vl53l0x.cpp.s
+
 TestCode/src/ocv_ctrl_car_with_pid.o: TestCode/src/ocv_ctrl_car_with_pid.cpp.o
 .PHONY : TestCode/src/ocv_ctrl_car_with_pid.o
 
@@ -800,30 +848,6 @@ TestCode/src/some_function.s: TestCode/src/some_function.cpp.s
 TestCode/src/some_function.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/some_function.cpp.s
 .PHONY : TestCode/src/some_function.cpp.s
-
-TestCode/src/vl53l0x_obtc_avds.o: TestCode/src/vl53l0x_obtc_avds.cpp.o
-.PHONY : TestCode/src/vl53l0x_obtc_avds.o
-
-# target to build an object file
-TestCode/src/vl53l0x_obtc_avds.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.o
-.PHONY : TestCode/src/vl53l0x_obtc_avds.cpp.o
-
-TestCode/src/vl53l0x_obtc_avds.i: TestCode/src/vl53l0x_obtc_avds.cpp.i
-.PHONY : TestCode/src/vl53l0x_obtc_avds.i
-
-# target to preprocess a source file
-TestCode/src/vl53l0x_obtc_avds.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.i
-.PHONY : TestCode/src/vl53l0x_obtc_avds.cpp.i
-
-TestCode/src/vl53l0x_obtc_avds.s: TestCode/src/vl53l0x_obtc_avds.cpp.s
-.PHONY : TestCode/src/vl53l0x_obtc_avds.s
-
-# target to generate assembly for a file
-TestCode/src/vl53l0x_obtc_avds.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.s
-.PHONY : TestCode/src/vl53l0x_obtc_avds.cpp.s
 
 TestCode/src/wonderEcho_sound.o: TestCode/src/wonderEcho_sound.cpp.o
 .PHONY : TestCode/src/wonderEcho_sound.o
@@ -951,6 +975,12 @@ help:
 	@echo "... TestCode/src/motor_drive.o"
 	@echo "... TestCode/src/motor_drive.i"
 	@echo "... TestCode/src/motor_drive.s"
+	@echo "... TestCode/src/obtc_avds_with_cam.o"
+	@echo "... TestCode/src/obtc_avds_with_cam.i"
+	@echo "... TestCode/src/obtc_avds_with_cam.s"
+	@echo "... TestCode/src/obtc_avds_with_vl53l0x.o"
+	@echo "... TestCode/src/obtc_avds_with_vl53l0x.i"
+	@echo "... TestCode/src/obtc_avds_with_vl53l0x.s"
 	@echo "... TestCode/src/ocv_ctrl_car_with_pid.o"
 	@echo "... TestCode/src/ocv_ctrl_car_with_pid.i"
 	@echo "... TestCode/src/ocv_ctrl_car_with_pid.s"
@@ -966,9 +996,6 @@ help:
 	@echo "... TestCode/src/some_function.o"
 	@echo "... TestCode/src/some_function.i"
 	@echo "... TestCode/src/some_function.s"
-	@echo "... TestCode/src/vl53l0x_obtc_avds.o"
-	@echo "... TestCode/src/vl53l0x_obtc_avds.i"
-	@echo "... TestCode/src/vl53l0x_obtc_avds.s"
 	@echo "... TestCode/src/wonderEcho_sound.o"
 	@echo "... TestCode/src/wonderEcho_sound.i"
 	@echo "... TestCode/src/wonderEcho_sound.s"
