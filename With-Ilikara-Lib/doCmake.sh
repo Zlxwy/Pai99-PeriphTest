@@ -9,7 +9,7 @@ COLOR_RST="\033[0m"
 # 指定构建的文件夹名称、要发送的可执行文件的名称(必须和CMakeLists.txt文件中的保持一致)、发送到久久派后的名称、久久派的IP地址
 BUILD_FOLDER="Build"
 CMAKED_NAME="Emain"
-PAI99_RECV_NAME="Etest"
+PAI99_RECV_NAME="Eocv"
 PAI99_IP_ADDR="192.168.0.199"
 
 # 检查构建文件夹是否存在，不存在的话就创建这个文件夹

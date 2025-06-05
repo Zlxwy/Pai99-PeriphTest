@@ -19,8 +19,8 @@ typedef int64_t     int64;  // 64位有符号整数
 #define CAM_HEIGHT          480
 #define RESIZED_WIDTH       128 // 缩放后的宽度
 #define RESIZED_HEIGHT      96 // 缩放后的高度
-#define ROW_UP              50 // 计算路径时，从第几行开始
-#define ROW_DOWN            70 // 计算路径时，到第几行结束
+#define ROW_UP              55 // 计算路径时，从第几行开始
+#define ROW_DOWN            72 // 计算路径时，到第几行结束
 #define GRAY2BIN_THRESH     119 // 灰度图像转黑白图像的灰度阈值
 #define MIN_AREA_THRESH     90 // 黑白图像移除面积较小的孤岛色块的面积阈值
 #define BIN_WHITE           255 // 二值图像的白色

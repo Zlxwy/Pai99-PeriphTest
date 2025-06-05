@@ -74,7 +74,7 @@ int test_obtc_avds_with_cam(void) {
         xlPID.isPolOfMeaValCsstWithOutVal = true;
         xlPID.kP = 29.9;
         xlPID.kI = 0.0;
-        xlPID.kD = 76.0;
+        xlPID.kD = 98.7;
         xlPID.isFirstOrderFilterEnabled = true;
         xlPID.filterParam = 0.3;
         xlPID.targetVal = 0.0;
@@ -88,9 +88,9 @@ int test_obtc_avds_with_cam(void) {
         xlPID.isOutputEnabled = true;
     PidObject pyPID; // 关于变量py的PID参数定义
         pyPID.isPolOfMeaValCsstWithOutVal = false;
-        pyPID.kP = 0.05;
+        pyPID.kP = 0.3;
         pyPID.kI = 0.0;
-        pyPID.kD = 0.5;
+        pyPID.kD = 1.8;
         pyPID.isFirstOrderFilterEnabled = false;
         pyPID.filterParam = 0.0;
         pyPID.targetVal = (0+RESIZED_WIDTH-1) / 2.0;
@@ -105,9 +105,6 @@ int test_obtc_avds_with_cam(void) {
     // PID计算的最终输出
     double angleOffset = 0; // PID计算输出
     double finalAngle = 0; // 施加到舵机上的角度值
-
-    // 障碍物距离，从文件/home/root/myExecs/about_vl53l0x/range_datas/RangeMilliMeter.txt中读取
-    double obstacleDistance;
 
     while (true) { // 开始循环
         /*************************帧率计算*******************************/
@@ -124,24 +121,24 @@ int test_obtc_avds_with_cam(void) {
             cv::Size(RESIZED_WIDTH, RESIZED_HEIGHT), // 缩放后的图像大小
             GRAY2BIN_THRESH, 255 // 自定义阈值
         );
-        binImgFilter(binFrame); // 使用B站up主“村东头无敌的小瞎子”(uid:385282905)的一种滤波算法
-        std::vector<cv::Point> leftEdgePoints, rightEdgePoints;  // 定义两个容器来存储左右边缘点
+        binImgFilter(binFrame); // 使用B站up主“村东头无敌的小瞎子”(uid:385282905)的一种滤波算法，对二值图像进行滤波
+        std::vector<cv::Point> leftEdgePoints, rightEdgePoints;  // 定义两个容器来存储左右边界的点的坐标值
         findEdgePix(binFrame, leftEdgePoints, rightEdgePoints); // 查找二值图像的左右边界像素点坐标，存入两个容器中
 
         /**********************在彩色图上画出这些识别到的边界点，以及中线************************/
         size_t minDopNum = std::min<size_t>(leftEdgePoints.size(), rightEdgePoints.size()); // 获取这两个容器的元素数量最小值
-        std::vector<cv::Point> midPoint; // 用于收集两条边线之间的中点坐标值
+        std::vector<cv::Point> midPoints; // 用于收集两条边线之间的中点坐标值
         for (size_t i=0; i<minDopNum; i++) {
-            midPoint.push_back( // 加入这个中点
+            midPoints.push_back( // 加入这个中点
                 calMidPoint(leftEdgePoints.at(i), rightEdgePoints.at(i))
             );
         }
-        std::vector<cv::Point> midPointFiltered; // 用于存储对X坐标值滤波后的中点坐标
-        filterXCoord(midPoint, midPointFiltered, 5);
+        std::vector<cv::Point> midPointsFiltered; // 用于存储对X坐标值滤波后的中点坐标
+        filterXCoord(midPoints, midPointsFiltered, 11);
 
         /********************在两行之间计算出斜率xl和偏斜py，由此计算输出控制量****************/
-        xlPID.measuredVal = calAverSlopeFromRowToRow(resizedFrame, midPointFiltered, ROW_UP, ROW_DOWN); // 计算中线的偏斜
-        pyPID.measuredVal = calAverXCoordFromRowToRow(resizedFrame, midPointFiltered, ROW_UP, ROW_DOWN); // 计算X坐标平均值
+        xlPID.measuredVal = calAverSlopeFromRowToRow(resizedFrame, midPointsFiltered, ROW_UP, ROW_DOWN); // 计算中线的偏斜
+        pyPID.measuredVal = calAverXCoordFromRowToRow(resizedFrame, midPointsFiltered, ROW_UP, ROW_DOWN); // 计算X坐标平均值
         angleOffset = xlPID.pidCalculate() + pyPID.pidCalculate(); // 将两个PID输出相加，得到舵机的转角偏移值
         angleOffset = myClamp(angleOffset, -SERVO_OFFSET_ANGLE_MAX, +SERVO_OFFSET_ANGLE_MAX); // 限制舵机转角偏移值的范围
         finalAngle = SERVO_ANGLE_MID + angleOffset; // 在中值 SERVO_ANGLE_MID 的基础之上
@@ -163,8 +160,8 @@ int test_obtc_avds_with_cam(void) {
             << "启动：" << ((isMotorEnabled) ? "是" : "否") << std::endl;
 
         /******************************检测按键***********************************/
-        #define XL_OFFSET ((double)0.2) // xl的偏移量
-        #define PY_OFFSET ((double)20.0) // py的偏移量
+        #define XL_OFFSET ((double)0.5) // xl的偏移量
+        #define PY_OFFSET ((double)50.0) // py的偏移量
         if ( kb.kbhit() ) {
             int getKey = kb.readKey();
             if( getKey == KEY_ESC ) break;
@@ -175,7 +172,7 @@ int test_obtc_avds_with_cam(void) {
                         for (auto &mp: motorPWM) mp.enable();
                     } else if (!isMotorEnabled) { // 如果是要停止电机
                         for (auto &md: motorDIR) md.setValue(!CAR_DIRECTION); // 反转电机方向
-                        usleep(ms2us(500)); // 等待500毫秒（增加一个刹车作用）
+                        usleep(ms2us(351)); // 反转电机方向，等待一段时间（增加一个刹车作用）
                         for (auto &mp: motorPWM) mp.disable(); // 关闭电机PWM输出
                         for (auto &md: motorDIR) md.setValue(CAR_DIRECTION); // 恢复电机方向
                     }

@@ -74,7 +74,7 @@ int test_ocv_ctrl_car_with_pid(void) {
         xlPID.isPolOfMeaValCsstWithOutVal = true;
         xlPID.kP = 29.9;
         xlPID.kI = 0.0;
-        xlPID.kD = 76.0;
+        xlPID.kD = 45.7;
         xlPID.isFirstOrderFilterEnabled = true;
         xlPID.filterParam = 0.3;
         xlPID.targetVal = 0.0;
@@ -88,9 +88,9 @@ int test_ocv_ctrl_car_with_pid(void) {
         xlPID.isOutputEnabled = true;
     PidObject pyPID; // 关于变量py的PID参数定义
         pyPID.isPolOfMeaValCsstWithOutVal = false;
-        pyPID.kP = 0.05;
+        pyPID.kP = 0.3;
         pyPID.kI = 0.0;
-        pyPID.kD = 0.5;
+        pyPID.kD = 1.8;
         pyPID.isFirstOrderFilterEnabled = false;
         pyPID.filterParam = 0.0;
         pyPID.targetVal = (0+RESIZED_WIDTH-1) / 2.0;
@@ -104,6 +104,7 @@ int test_ocv_ctrl_car_with_pid(void) {
         pyPID.isOutputEnabled = true;
     // PID计算的最终输出
     double angleOffset = 0; // PID计算输出
+    std::array<double,5> angleArray = {0,0,0,0,0}; // 用于存储最近5次的角度值
     double finalAngle = 0; // 施加到舵机上的角度值
 
     // 障碍物距离，从文件/home/root/myExecs/about_vl53l0x/range_datas/RangeMilliMeter.txt中读取
@@ -137,7 +138,7 @@ int test_ocv_ctrl_car_with_pid(void) {
             );
         }
         std::vector<cv::Point> midPointFiltered; // 用于存储对X坐标值滤波后的中点坐标
-        filterXCoord(midPoint, midPointFiltered, 5);
+        filterXCoord(midPoint, midPointFiltered, 11); // 对中点坐标进行滤波，平滑X坐标值
 
         /********************在两行之间计算出斜率xl和偏斜py，由此计算输出控制量****************/
         xlPID.measuredVal = calAverSlopeFromRowToRow(resizedFrame, midPointFiltered, ROW_UP, ROW_DOWN); // 计算中线的偏斜
@@ -168,7 +169,14 @@ int test_ocv_ctrl_car_with_pid(void) {
             if( getKey == KEY_ESC ) break;
             else if (getKey == KEY_SPACE) {
                 isMotorEnabled = !isMotorEnabled; //翻转电机使能状态
-                for (auto &mp: motorPWM) (isMotorEnabled)?mp.enable():mp.disable();
+                if (isMotorEnabled) { // 如果是要启动电机
+                        for (auto &mp: motorPWM) mp.enable();
+                } else if (!isMotorEnabled) { // 如果是要停止电机
+                    for (auto &md: motorDIR) md.setValue(!CAR_DIRECTION); // 反转电机方向
+                    usleep(ms2us(351)); // 等待一段时间（增加一个刹车作用）
+                    for (auto &mp: motorPWM) mp.disable(); // 关闭电机PWM输出
+                    for (auto &md: motorDIR) md.setValue(CAR_DIRECTION); // 恢复电机方向
+                }
             }
         }
     } // while (true)
