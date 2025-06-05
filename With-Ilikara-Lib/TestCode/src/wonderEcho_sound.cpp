@@ -2,6 +2,7 @@
 // 按ESC退出
 // 按W键切换声音开关（0xff/0x00）
 // 按A/D键切换哪条声音（0x00~0xff）
+// 0xFF 0x10 是“人行道前停车礼让行人”
 #include <cstdint>
 #include <iostream>
 #include <unistd.h>
@@ -28,8 +29,8 @@ int test_wonderEcho_sound(void) {
             if (getKey == KEY_ESC) break;
             switch (getKey) {
                 case KEY_W: case KEY_w: // 按下W键
-                    if (reg == 0xff)        reg = 0x00;
-                    else if (reg == 0x00)   reg = 0xff; // 限制寄存器值在0-100之间
+                    if (reg == 0xff) reg = 0x00;
+                    else if (reg == 0x00) reg = 0xff; // 限制寄存器值在0-100之间
                     break;
                 case KEY_A: case KEY_a: // 按下A键
                     if (data == 1) data = data;
@@ -40,12 +41,12 @@ int test_wonderEcho_sound(void) {
                     if (data >= UINT8_MAX) data = UINT8_MAX;
                     else data = data + 1; // 限制数据值在0-100之间
                     break;
-                default: goto sleepTime; break;
+                default: goto slpTime; break;
             }
             std::cout << "reg: " << (int)reg << ", data: " << (int)data << std::endl;
-            wonderEchoSend(reg, data); // 发送数据到wonderEcho模块
+            wonderEchoSend(reg, data); // 发送数据到 WonderEcho 模块
         }
-        sleepTime:usleep(ms2us(10));
+        slpTime:usleep(ms2us(10));
     }
     return 0;
 }
