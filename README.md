@@ -9,12 +9,13 @@
 
 # 项目结构简述
 
-有两个文件夹，分别为 With-My-Lib 和 With-Ilikara-Lib ，
+有两个文件夹，分别为 With-My-Lib 和 With-Ilikara-Lib 和 Push，
 两个文件夹内的项目结构一样，使用的库分别是
   - 我自己参考着龙邱科技、Ilikara写的
   - 机器人与人工智能赛方提供的库，完全是Ilikara写的
+  - 无描述
 
-在 <font color="red">*./With-xxx-Lib/User/main.cpp*</font> 文件的 `main()` 函数中，每个独立函数均构成一个完整的主程序单元，负责实现单一功能模块。因此在 `main()` 函数中，**每次只能调用其中一个功能函数**，若启用某项功能，必须通过注释屏蔽其他所有功能函数。  
+在 <font color="red">*./With-xxx-Lib/User/main.cpp*</font> 文件的 `main()` 函数中，每个独立函数均构成一个完整的主程序单元，负责实现单一功能模块。因此在 `main()` 函数中，**每次只能调用其中一个功能函数**，若启用某项功能，必须通过注释屏蔽其他所有功能函数。
 
 这些功能函数的具体实现在 <font color="red">*./With-xxx-Lib/TestCode/src/*</font> 目录下的对应 `.cpp` 文件中，其函数声明统一存放在 <font color="red">*./With-xxx-Lib/TestCode/inc/test.hpp*</font> 头文件内，可通过头文件获取各功能模块列表。
 
