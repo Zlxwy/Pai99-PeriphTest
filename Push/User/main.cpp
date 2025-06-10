@@ -19,7 +19,7 @@
 #include "some_function.hpp"
 
 #define CAR_DIRECTION ((bool)1)
-#define CAR_SPEED     ((int)21) // 车子速度（百分比）
+#define CAR_SPEED     ((int)23) // 车子速度（百分比）
 
 int shouldPlaySound = 0; // 是否播放声音，在2和4时播放
 int main(void) {
