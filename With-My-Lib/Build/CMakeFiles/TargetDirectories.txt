@@ -1,3 +1,0 @@
-/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-My-Lib/Build/CMakeFiles/Emain.dir
-/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-My-Lib/Build/CMakeFiles/edit_cache.dir
-/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-My-Lib/Build/CMakeFiles/rebuild_cache.dir
