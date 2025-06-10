@@ -585,6 +585,30 @@ Lib/src/wonderEcho.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.s
 .PHONY : Lib/src/wonderEcho.cpp.s
 
+TestCode/src/final_exec.o: TestCode/src/final_exec.cpp.o
+.PHONY : TestCode/src/final_exec.o
+
+# target to build an object file
+TestCode/src/final_exec.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/final_exec.cpp.o
+.PHONY : TestCode/src/final_exec.cpp.o
+
+TestCode/src/final_exec.i: TestCode/src/final_exec.cpp.i
+.PHONY : TestCode/src/final_exec.i
+
+# target to preprocess a source file
+TestCode/src/final_exec.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/final_exec.cpp.i
+.PHONY : TestCode/src/final_exec.cpp.i
+
+TestCode/src/final_exec.s: TestCode/src/final_exec.cpp.s
+.PHONY : TestCode/src/final_exec.s
+
+# target to generate assembly for a file
+TestCode/src/final_exec.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Emain.dir/build.make CMakeFiles/Emain.dir/TestCode/src/final_exec.cpp.s
+.PHONY : TestCode/src/final_exec.cpp.s
+
 TestCode/src/gpio_output.o: TestCode/src/gpio_output.cpp.o
 .PHONY : TestCode/src/gpio_output.o
 
@@ -963,6 +987,9 @@ help:
 	@echo "... Lib/src/wonderEcho.o"
 	@echo "... Lib/src/wonderEcho.i"
 	@echo "... Lib/src/wonderEcho.s"
+	@echo "... TestCode/src/final_exec.o"
+	@echo "... TestCode/src/final_exec.i"
+	@echo "... TestCode/src/final_exec.s"
 	@echo "... TestCode/src/gpio_output.o"
 	@echo "... TestCode/src/gpio_output.i"
 	@echo "... TestCode/src/gpio_output.s"

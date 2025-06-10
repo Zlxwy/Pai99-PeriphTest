@@ -37,6 +37,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/Emain.dir/Lib/src/vl53l0x.cpp.o.d"
   "CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.o"
   "CMakeFiles/Emain.dir/Lib/src/wonderEcho.cpp.o.d"
+  "CMakeFiles/Emain.dir/TestCode/src/final_exec.cpp.o"
+  "CMakeFiles/Emain.dir/TestCode/src/final_exec.cpp.o.d"
   "CMakeFiles/Emain.dir/TestCode/src/gpio_output.cpp.o"
   "CMakeFiles/Emain.dir/TestCode/src/gpio_output.cpp.o.d"
   "CMakeFiles/Emain.dir/TestCode/src/keyboard_ctrl_car.cpp.o"

@@ -18,7 +18,7 @@
 #include "test.hpp"
 
 #define CAR_DIRECTION ((bool)1)
-#define CAR_SPEED     ((int)22) // 车子速度（百分比）
+#define CAR_SPEED     ((int)15) // 车子速度（百分比）
 
 int test_obtc_avds_with_cam(void) {
     /*初始化舵机PWM: pwmchip1,pwm0(GPIO65)*/

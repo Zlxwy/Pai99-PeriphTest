@@ -1,6 +1,7 @@
-CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.o: \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/src/vl53l0x_obtc_avds.cpp \
+CMakeFiles/Emain.dir/Lib/src/image_cv.cpp.o: \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/Push/Lib/src/image_cv.cpp \
  /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/stdc-predef.h \
+ /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/Push/Lib/inc/image_cv.h \
  /home/root/opencv/include/opencv4/opencv2/opencv.hpp \
  /home/root/opencv/include/opencv4/opencv2/opencv_modules.hpp \
  /home/root/opencv/include/opencv4/opencv2/core.hpp \
@@ -381,30 +382,4 @@ CMakeFiles/Emain.dir/TestCode/src/vl53l0x_obtc_avds.cpp.o: \
  /home/root/opencv/include/opencv4/opencv2/stitching/detail/camera.hpp \
  /home/root/opencv/include/opencv4/opencv2/video.hpp \
  /home/root/opencv/include/opencv4/opencv2/video/tracking.hpp \
- /home/root/opencv/include/opencv4/opencv2/video/background_segm.hpp \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/unistd.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/posix_opt.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/environments.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/confname.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/getopt_posix.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/getopt_core.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/fstream \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/basic_file.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/c++io.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/c++/8.3.0/bits/fstream.tcc \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Lib/inc/StylePrint.hpp \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Lib/inc/PIDObject.hpp \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Lib/inc/GPIO.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/fcntl.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/fcntl.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/fcntl-linux.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/types/struct_iovec.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/linux/falloc.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/stat.h \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Lib/inc/PwmController.h \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Lib/inc/KeyDef.hpp \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/termios.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/bits/termios.h \
- /opt/loongson-gnu-toolchain-8.3-x86_64-loongarch64-linux-gnu-rc1.6/loongarch64-linux-gnu/sysroot/usr/include/sys/ttydefaults.h \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/Lib/inc/CalFPS.hpp \
- /home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib/TestCode/inc/test.hpp
+ /home/root/opencv/include/opencv4/opencv2/video/background_segm.hpp

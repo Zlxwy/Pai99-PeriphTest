@@ -28,6 +28,10 @@ int test_wonderEcho_sound(void) {
             int getKey = kb.readKey();
             if (getKey == KEY_ESC) break;
             switch (getKey) {
+                case KEY_SPACE: // 按下空格键
+                    wonderEchoSend(0xff, 0x10);
+                    goto enddd;
+                    break;
                 case KEY_W: case KEY_w: // 按下W键
                     if (reg == 0xff) reg = 0x00;
                     else if (reg == 0x00) reg = 0xff; // 限制寄存器值在0-100之间
@@ -41,12 +45,12 @@ int test_wonderEcho_sound(void) {
                     if (data >= UINT8_MAX) data = UINT8_MAX;
                     else data = data + 1; // 限制数据值在0-100之间
                     break;
-                default: goto slpTime; break;
+                default: goto enddd; break;
             }
             std::cout << "reg: " << (int)reg << ", data: " << (int)data << std::endl;
             wonderEchoSend(reg, data); // 发送数据到 WonderEcho 模块
         }
-        slpTime:usleep(ms2us(10));
+        enddd:usleep(ms2us(10));
     }
     return 0;
 }

@@ -60,5 +60,6 @@
         "thread": "cpp",
         "cinttypes": "cpp",
         "typeinfo": "cpp"
-    }
+    },
+    "cmake.sourceDirectory": "/home/yzy/Desktop/lx2k0300_ws/myCodes/Pai99-PeriphTest/With-Ilikara-Lib"
 }
